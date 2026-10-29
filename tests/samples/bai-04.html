@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 4: JavaScript và thao tác với DOM</title>
+<meta property="og:title" content="Bài 4: JavaScript và thao tác với DOM">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/bai-03.html">Bài trước</a> ·
+    <a href="/">Trang chủ</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 4: JavaScript và thao tác với DOM</h1>
+
+  <p>JavaScript chạy trong trình duyệt và làm cho trang trở nên tương tác. Bài
+  học này đi từ cách chọn phần tử trong cây tài liệu, gắn sự kiện, rồi đến cách
+  cập nhật nội dung mà không làm tải lại trang.</p>
+
+  <p>Ba cách chọn phần tử phổ biến nhất là theo mã định danh, theo lớp và theo
+  bộ chọn CSS. Trong mã hiện đại, câu truy vấn bộ chọn là lựa chọn tổng quát
+  nhất, còn hai cách kia có hiệu năng tốt hơn một chút khi cần tìm một phần tử
+  duy nhất đã biết trước. Dù phương thức nào, phần tử cần được tìm sau khi tài
+  liệu đã sẵn sàng, nếu không phần tử sẽ chưa tồn tại khi mã chạy.</p>
+
+  <h2>Sự kiện và trạng thái</h2>
+
+  <p>Sự kiện là cơ chế để mã phản ứng với thao tác của người dùng. Có hai kiểu
+  đăng ký sự kiện: dạng thuộc tính, viết thẳng trong HTML, và dạng
+  <code>addEventListener</code>, tách phần hành vi ra khỏi cấu trúc. Dạng thứ hai
+  được ưu tiên vì một phần tử có thể đăng ký nhiều trình xử lý cho cùng một
+  sự kiện, và cấu trúc HTML không bị lẫn logic.</p>
+
+  <p>Trạng thái của giao diện nên được giữ ở một chỗ duy nhất. Khi dữ liệu thay
+  đổi, hàm vẽ lại giao diện sẽ đọc từ trạng thái đó, thay vì mỗi nơi tự cập
+  nhật từng thành phần. Cách này giúp tránh tình trạng giao diện và dữ liệu lệch
+  nhau sau nhiều lần thao tác.</p>
+
+  <p>Mã bài mẫu: <code>mau04webarchive</code>. Cụm này được đặt trong thân bài
+  để làm mẫu cho phép tìm kiếm theo nội dung.</p>
+
+  <ul>
+    <li>Đăng ký sự kiện sau khi tài liệu đã sẵn sàng.</li>
+    <li>Giữ trạng thái ở một nơi và vẽ lại giao diện từ trạng thái đó.</li>
+    <li>Dùng <code>textContent</code> khi chèn văn bản do người dùng nhập.</li>
+  </ul>
+</article>
+
+</body>
+</html>

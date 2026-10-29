@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 10: Bảng dữ liệu và danh sách trong bài viết</title>
+<meta property="og:title" content="Bài 10: Bảng dữ liệu và danh sách trong bài viết">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/bai-09.html">Bài trước</a> ·
+    <a href="/">Trang chủ</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 10: Bảng dữ liệu và danh sách trong bài viết</h1>
+
+  <p>Nhiều bài viết kỹ thuật dựa rất nhiều vào bảng dữ liệu và danh sách. Bài
+  này cố tình xây dựng nội dung quanh một bảng so sánh và hai danh sách để kiểm
+  tra xem công cụ lưu trữ có giữ nguyên cấu trúc bảng, cột tiêu đề, phạm vi ô
+  và thứ tự mục sau khi làm sạch hay không.</p>
+
+  <p>Bảng HTML cần phần tiêu đề cột để người đọc hiểu ý nghĩa từng cột, và cần
+  phần thân để chứa dữ liệu. Khi bảng nằm trong một bài viết được lưu lại, công
+  cụ làm sạch chỉ giữ lại các thuộc tính phạm vi ô, vì đó là thông tin mang ý
+  nghĩa cho trình đọc màn hình. Mọi thuộc tính trang trí khác đều bị gỡ bỏ.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Cấu trúc lưu trữ</th>
+        <th scope="col">Ưu điểm</th>
+        <th scope="col">Nhược điểm</th>
+        <th scope="col">Phù hợp khi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ảnh chụp toàn trang</td>
+        <td>Chính xác tuyệt đối với trang động</td>
+        <td>Dung lượng lớn, khó tra cứu theo từ khoá</td>
+        <td>Trang có bố cục phức tạp, ít cần tìm kiếm</td>
+      </tr>
+      <tr>
+        <td>Ảnh chụp kèm nội dung đã bóc tách</td>
+        <td>Vừa giữ giao diện vừa có văn bản sạch để lập chỉ mục</td>
+        <td>Cần bảo trì bộ bóc tách nội dung</td>
+        <td>Hầu hết bài viết kiến thức</td>
+      </tr>
+      <tr>
+        <td>Chỉ lưu nội dung đã bóc tách</td>
+        <td>Nhẹ, tìm kiếm nhanh, dễ xuất bản lưu</td>
+        <td>Mất bố cục gốc</td>
+        <td>Kho tri thức nội bộ, ưu tiên đọc và tìm kiếm</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">Ba hàng trên là ba lựa chọn khác nhau về mức độ giữ nguyên hình dạng bản gốc.</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <h2>Danh sách có thứ tự và danh sách không thứ tự</h2>
+
+  <p>Danh sách có thứ tự dùng khi thứ tự các mục mang ý nghĩa, ví dụ các bước
+  thực hiện tuần tự. Danh sách không thứ tự dùng cho tập hợp các mục ngang
+  hàng nhau, ví dụ danh sách điều kiện kiểm tra. Trong công cụ lưu trữ, cả hai
+  loại đều được giữ nguyên sau khi bóc tách, và thứ tự các mục không bị đảo.</p>
+
+  <ol>
+    <li>Kiểm tra danh sách tên miền được duyệt trước khi tải bất kỳ byte nào.</li>
+    <li>Tải trang, tự theo chuyển hướng, kiểm tra lại danh sách ở mỗi đích.</li>
+    <li>Bóc tách tiêu đề và vùng nội dung chính bằng phân tích cây tài liệu.</li>
+    <li>Kiểm tra độ dài văn bản tối thiểu để loại trang không có nội dung.</li>
+    <li>Làm sạch theo danh sách thẻ và thuộc tính cho phép.</li>
+    <li>Tải ảnh về máy chủ nội bộ và nối lại bằng đường dẫn cục bộ.</li>
+  </ol>
+
+  <ul>
+    <li>Bảng cần có hàng tiêu đề và thuộc tính phạm vi ô.</li>
+    <li>Danh sách có thứ tự dùng cho quy trình tuần tự.</li>
+    <li>Thứ tự mục phải được giữ nguyên sau khi bóc tách.</li>
+  </ul>
+
+  <p>Mã bài mẫu: <code>mau10webarchive</code>. Cụm này nằm trong thân bài, ngay
+  sau bảng dữ liệu.</p>
+</article>
+
+</body>
+</html>

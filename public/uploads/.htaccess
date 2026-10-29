@@ -1,0 +1,6 @@
+# FIX-01: chặn truy cập trực tiếp ảnh snapshot (Apache).
+# Ảnh chỉ phục vụ qua public/img.php (có xác thực + kiểm tra quyền).
+# Tệp tĩnh của ứng dụng (/assets/...) không nằm ở đây nên không ảnh hưởng.
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+  Require all denied
+</FilesMatch>

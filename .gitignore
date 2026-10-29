@@ -1,25 +1,51 @@
-# CakePHP 3
+# .local — công cụ cục bộ (đường dẫn PHP, log máy chủ, cookie phiên)
+.local/
 
-/vendor/*
-/config/app.php
+# Biến môi trường / bí mật
+.env
+.env.*
+*.env
 
-/tmp/cache/models/*
-!/tmp/cache/models/empty
-/tmp/cache/persistent/*
-!/tmp/cache/persistent/empty
-/tmp/cache/views/*
-!/tmp/cache/views/empty
-/tmp/sessions/*
-!/tmp/sessions/empty
-/tmp/tests/*
-!/tmp/tests/empty
+# Thông tin kết nối CSDL cục bộ (chứa mật khẩu tài khoản MySQL riêng của ứng dụng).
+# Được sinh tự động bởi scripts/setup_db.php — TUYỆT ĐỐI KHÔNG commit.
+config/db.local.php
 
-/logs/*
-!/logs/empty
+# Cookie / session / khoá phiên làm việc
+*.cookie
+cookies.txt
+*.jar
+sessions/
 
-# CakePHP 2
+# Log
+*.log
+logs/
+*.log.*
 
-/app/tmp/*
-/app/Config/core.php
-/app/Config/database.php
-/vendors/*
+# Tệp nhị phân do capture tải về (ảnh trong bài viết). Giữ cấu trúc thư mục bằng
+# .gitkeep, KHÔNG commit ảnh đã tải.
+public/uploads/*
+!public/uploads/.gitkeep
+!public/uploads/.htaccess
+!public/uploads/web.config
+!public/uploads/snapshots/
+public/uploads/snapshots/*
+!public/uploads/snapshots/.gitkeep
+
+# Dump / sao lưu CSDL (KHÔNG commit dữ liệu thật)
+*.dump
+*.sql.gz
+backup*.sql
+dump*.sql
+
+# Hệ điều hành / trình soạn thảo
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# Tài liệu làm việc nội bộ của agent/developer (prompt & context) — KHÔNG commit,
+# chỉ dùng cục bộ.
+/prompt.md
+/PROJECT_CONTEXT.md

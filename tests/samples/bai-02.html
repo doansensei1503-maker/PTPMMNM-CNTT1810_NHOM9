@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 2: Truy vấn MySQL và chỉ mục bảng</title>
+<meta property="og:title" content="Bài 2: Truy vấn MySQL và chỉ mục bảng">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/bai-01.html">Bài trước</a> ·
+    <a href="/">Trang chủ</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 2: Truy vấn MySQL và chỉ mục bảng</h1>
+
+  <p>MySQL vẫn là hệ quản trị cơ sở dữ liệu quan hệ phổ biến nhất trong các
+  dự án PHP thông thường. Bài học này tập trung vào cách viết câu truy vấn an
+  toàn và cách chọn chỉ mục để câu truy vấn chạy nhanh hơn mà không phải viết lại
+  toàn bộ câu lệnh.</p>
+
+  <p>Nguyên tắc đầu tiên là không bao giờ nối chuỗi trực tiếp vào câu truy vấn.
+  Dù biến đã được kiểm tra, việc ghép chuỗi vẫn tạo ra một lớp rủi ro không cần
+  thiết. Câu lệnh chuẩn bị sẽ tách phần câu lệnh và phần tham số ở tầng giao
+  thức, nên dữ liệu trong tham số không bao giờ bị hiểu là mã SQL.</p>
+
+  <figure>
+    <img src="anh-02.png" alt="Ảnh minh hoạ cây chỉ mục của MySQL" title="Cây chỉ mục MySQL">
+    <figcaption>Chỉ mục B-Tree giúp MySQL không phải quét toàn bộ bảng khi lọc theo cột có chỉ mục.</figcaption>
+  </figure>
+
+  <h2>Chỉ mục và kế hoạch thực thi</h2>
+
+  <p>Chỉ mục là một cấu trúc dữ liệu thứ tự, giúp tìm dòng khớp nhanh hơn nhiều
+  lần so với quét tuần tự. Bù lại, mỗi lần ghi thêm dữ liệu đều phải cập nhật
+  cây chỉ mục, nên chỉ mục quá nhiều lại làm chậm các câu lệnh ghi. Chỉ mục nên
+  được đặt trên các cột thường xuyên nằm trong điều kiện lọc, cột dùng để nối
+  bảng, và cột sắp xếp kết quả.</p>
+
+  <p>Câu lệnh giải thích kế hoạch cho biết MySQL thực sự làm gì: nó dùng chỉ
+  mục nào, quét bao nhiêu dòng, có lọc tạm thời hay không. Khi số dòng được
+  quét lớn hơn nhiều lần số dòng trả về, đó là dấu hiệu chỉ mục chưa phù hợp
+  với câu truy vấn đang chạy.</p>
+
+  <h2>Chống chạy lặp cùng một tham số</h2>
+
+  <p>Khi dùng chế độ chuẩn bị thật, một tham số có tên chỉ được xuất hiện một
+  lần trong mỗi câu lệnh. Nếu cùng một điều kiện cần xuất hiện ở hai chỗ — ví
+  dụ một bên trong bộ lọc và một bên trong phép tính điểm — thì phải dùng hai
+  tên tham số khác nhau cho cùng một giá trị. Nếu không, câu lệnh sẽ bị từ chối
+  với mã lỗi không rõ ràng và rất dễ gây hiểu nhầm là lỗi cú pháp.</p>
+
+  <p>Mã bài mẫu: <code>mau02webarchive</code>. Cụm này nằm riêng trong thân bài
+  và được dùng làm từ khoá thử tìm theo nội dung, không phải theo tiêu đề.</p>
+
+  <ul>
+    <li>Dùng prepared statement cho mọi giá trị do người dùng nhập.</li>
+    <li>Mỗi tham số có tên chỉ xuất hiện một lần cho mỗi câu lệnh.</li>
+    <li>Đọc cây chỉ mục trước khi thêm chỉ mục mới.</li>
+  </ul>
+</article>
+
+</body>
+</html>

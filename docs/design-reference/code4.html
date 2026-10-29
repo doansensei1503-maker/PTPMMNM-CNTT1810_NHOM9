@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "tertiary-fixed-dim": "#6fd8cb",
+        "on-error-container": "#93000a",
+        "background": "#f8f9ff",
+        "secondary-fixed": "#d1e4ff",
+        "on-secondary-fixed": "#001d36",
+        "on-background": "#0f1d2a",
+        "secondary": "#3f6186",
+        "on-secondary-container": "#3a5c81",
+        "surface": "#f8f9ff",
+        "on-surface": "#0f1d2a",
+        "inverse-on-surface": "#e9f1ff",
+        "on-primary": "#ffffff",
+        "on-primary-container": "#7f97b7",
+        "primary-fixed": "#d2e4ff",
+        "secondary-fixed-dim": "#a8c9f4",
+        "surface-container-highest": "#d6e4f7",
+        "primary-fixed-dim": "#b0c8ea",
+        "error": "#ba1a1a",
+        "on-tertiary-container": "#35a59a",
+        "on-primary-fixed": "#001d36",
+        "secondary-container": "#b3d4ff",
+        "outline-variant": "#c3c6ce",
+        "inverse-surface": "#253140",
+        "surface-container": "#e4efff",
+        "surface-tint": "#48607e",
+        "surface-container-low": "#eef4ff",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-fixed-variant": "#26496d",
+        "on-primary-fixed-variant": "#304865",
+        "surface-container-high": "#dce9fc",
+        "primary": "#001a32",
+        "outline": "#74777e",
+        "on-secondary": "#ffffff",
+        "inverse-primary": "#b0c8ea",
+        "surface-variant": "#d6e4f7",
+        "primary-container": "#152f4a",
+        "on-tertiary-fixed": "#00201d",
+        "on-tertiary-fixed-variant": "#00504a",
+        "error-container": "#ffdad6",
+        "tertiary": "#001d1a",
+        "on-error": "#ffffff",
+        "on-surface-variant": "#43474d",
+        "tertiary-container": "#00342f",
+        "tertiary-fixed": "#8cf4e7",
+        "surface-bright": "#f8f9ff",
+        "on-tertiary": "#ffffff",
+        "surface-dim": "#cedbee"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "space-sm": "0.5rem",
+        "space-lg": "1.5rem",
+        "space-xs": "0.25rem",
+        "margin-mobile": "1rem",
+        "gutter-mobile": "1rem",
+        "margin": "2rem",
+        "space-md": "1rem",
+        "gutter": "1.5rem",
+        "space-xl": "2.5rem"
+      },
+      "fontFamily": {
+        "label-md": ["Inter"],
+        "body-sm": ["Inter"],
+        "body-lg": ["Inter"],
+        "display-lg-mobile": ["Inter"],
+        "reader-body": ["Merriweather"],
+        "headline-md": ["Inter"],
+        "body-md": ["Inter"],
+        "reader-title": ["Merriweather"],
+        "headline-sm": ["Inter"],
+        "display-lg": ["Inter"],
+        "reader-title-mobile": ["Merriweather"],
+        "label-sm": ["Inter"],
+        "reader-body-mobile": ["Merriweather"]
+      },
+      "fontSize": {
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "display-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "reader-body": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+        "reader-title": ["34px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "reader-title-mobile": ["26px", {"lineHeight": "36px", "fontWeight": "700"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+        "reader-body-mobile": ["16px", {"lineHeight": "28px", "fontWeight": "400"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-1 bg-primary-container w-full"></div><div class="h-16 max-w-[1440px] mx-auto px-margin flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="WebArchive Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V4gsFNE3GDN44xfDb8qSFTRH_sZBeFk2lIBqG3efLThK82AJHf_D0JaQrxVCSBOjEX518xOU4biC1NZ9rogSdxXO8CJVoXfxv9QMEsiBjAd4Qzep5kmVtzWVpaI7sqDU2n13W99RTZz3cpDDQWvLIGMV5W0-rZRLEc80F2u-W-_7c610wCY2YKpbD2u95RD19T8d2ZTV9ychREnH1EO4LVWOR-0O7Hn31w_NgbXpz4t8W3-D1DBS4Yd8TI"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight leading-none">WebArchive</span><span class="font-label-sm text-label-sm text-secondary font-medium mt-0.5">Thư viện Web cá nhân</span></div></div><nav class="hidden lg:flex items-center gap-space-xs ml-space-md" data-active-classes="bg-surface-container text-primary font-semibold rounded-lg"><a class="px-space-md py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors" data-path="trang-chu" href="#">Trang chủ</a><a class="px-space-md py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors" data-path="thu-vien-cua-toi" href="#">Thư viện của tôi</a><a class="px-space-md py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors" data-path="thu-vien-dang-mo" href="#">Thư viện đang mở</a><a class="px-space-md py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors" data-path="luu-trang-web" href="#">Lưu trang Web</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded-full"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-secondary font-medium">Chế độ offline sẵn sàng</span></div><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYTZuUEa9bPutUeri9TPAZ4pU1pW_G01SqHoQ62iZbJ8M9Lz4c7jKZf1OavhgJjgLTcsp7rjNjljEU3vU-yBJF-yJwYlk6GxP89RIq-VtusqF_dMW8FeAMdyiSugGjcIuMXUnI079l9D9e46K97LxW8PtxpTdoybrtdqDvuVD8INNStPp4IB0Y3eF01SUObBOQHa1WDdcw-sZjTQNFKu9n6qp-k7Jis_2zlqMvQ5iIBAj-awOHqKsQUA"/><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Lê Minh Tuấn</span><span class="font-label-sm text-label-sm text-on-surface-variant">Quản trị viên</span></div></div><a class="font-body-sm text-body-sm text-secondary hover:text-error transition-colors ml-space-xs hidden sm:inline-block" data-path="dang-xuat" href="#">Đăng xuất</a></div></div></header><main class="w-full pt-[68px] min-h-screen bg-surface"><div class="flex flex-col w-full">
+<!-- Subtle ambient glow backdrop -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[480px] bg-secondary-container/30 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+<div class="absolute top-96 right-10 w-[420px] h-[360px] bg-tertiary-fixed/30 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+<!-- HERO SECTION -->
+<section class="max-w-[1440px] mx-auto px-margin pt-space-xl pb-space-xl">
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+<!-- Badge Pill -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-high shadow-sm mb-space-lg">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary tracking-wide">Phiên bản v2.4</span>
+<span class="text-outline-variant font-label-md">•</span>
+<span class="font-label-md text-label-md text-secondary">Đọc ngoại tuyến an toàn &amp; lưu trữ tĩnh HTML</span>
+</div>
+<!-- Hero Headline -->
+<h1 class="font-reader-title text-reader-title text-primary tracking-tight md:text-[52px] md:leading-[60px] font-bold">
+          Lưu tri thức hôm nay.<br/>
+<span class="text-secondary">Đọc lại bất cứ lúc nào.</span>
+</h1>
+<!-- Value Prop -->
+<p class="mt-space-lg font-reader-body text-reader-body text-on-surface-variant max-w-2xl text-center">
+          Lưu nội dung bài viết từ những trang Web được hỗ trợ, sắp xếp vào thư viện cá nhân và đọc lại từ bản lưu ngay cả khi trang gốc không còn hoạt động.
+        </p>
+<!-- CTA Buttons -->
+<div class="mt-space-xl flex flex-wrap items-center justify-center gap-space-md w-full">
+<a class="inline-flex items-center justify-center gap-space-sm px-space-lg py-3 rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm shadow-md hover:bg-primary-container transition-all hover:scale-[1.01] active:scale-[0.99]" data-path="luu-trang-web" href="#">
+<span>Bắt đầu lưu bài viết</span>
+<span class="material-symbols-outlined text-lg leading-none">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-space-sm px-space-lg py-3 rounded-xl bg-surface-container-lowest text-on-surface font-headline-sm text-headline-sm shadow-sm hover:bg-surface-container-low transition-colors" href="#ban-luu-mau">
+<span class="material-symbols-outlined text-lg text-secondary">visibility</span>
+<span>Khám phá bản lưu mẫu</span>
+</a>
+</div>
+<!-- Archival Status Micro Bar -->
+<div class="mt-space-lg flex items-center gap-space-md text-secondary font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            Không quảng cáo bám đuổi
+          </span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            Bản snapshot vĩnh cửu
+          </span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            Tối ưu đọc ban đêm
+          </span>
+</div>
+</div>
+<!-- WORKSPACE MOCKUP PREVIEW -->
+<div class="mt-space-xl max-w-5xl mx-auto rounded-xl bg-surface-container-lowest shadow-xl overflow-hidden" id="ban-luu-mau">
+<!-- Mockup Top Bar Chrome -->
+<div class="bg-surface-container px-space-md py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-error/70 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-fixed-dim inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-on-tertiary-container/60 inline-block"></span>
+<div class="ml-space-md hidden sm:flex items-center gap-space-xs px-space-md py-1 bg-surface-container-lowest rounded-md text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">lock</span>
+<span class="truncate max-w-xs">archive.local/snapshot/view?id=arc_89410</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs text-on-tertiary-container">verified</span>
+              Mã kiểm chứng: sha256:d8c2e9
+            </span>
+</div>
+</div>
+<!-- Mockup Content Pane -->
+<div class="p-space-lg md:p-space-xl bg-surface-bright">
+<!-- Snapshot Meta strip -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pb-space-md">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-space-sm py-1 rounded-full bg-surface-container text-primary font-label-md text-label-md">
+                PHP &amp; MySQL Architecture
+              </span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm">
+                4.2 MB Snapshot
+              </span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm inline-flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                HTML sạch đã bóc tách
+              </span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm">
+                4 ảnh đã tải về máy chủ
+              </span>
+</div>
+<div class="inline-flex items-center gap-1 px-space-sm py-1 rounded-md bg-surface-container-lowest text-on-tertiary-container font-label-sm text-label-sm font-semibold shadow-sm">
+<span class="material-symbols-outlined text-sm">cloud_done</span>
+              Tình trạng: Lưu thành công 100%
+            </div>
+</div>
+<!-- Document Content Rendering Preview -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-sm max-w-3xl mx-auto">
+<div class="flex items-center gap-space-sm text-secondary font-label-sm text-label-sm mb-space-xs">
+<span class="material-symbols-outlined text-base">public</span>
+<span>nguon: dev-insights.org/posts/php-mysql-static-archive</span>
+<span>•</span>
+<span>Đã sao lưu: 14:28, 24/10/2024</span>
+</div>
+<h2 class="font-reader-title text-reader-title text-primary font-bold">
+              Tìm hiểu kiến trúc PHP &amp; MySQL trong lưu trữ Web tĩnh
+            </h2>
+<div class="flex items-center gap-space-md mt-space-sm text-secondary font-body-sm text-body-sm pb-space-md">
+<span>Tác giả: Nguyễn Đức Trọng</span>
+<span>•</span>
+<span>Thời gian đọc: 7 phút</span>
+<span>•</span>
+<span class="inline-flex items-center gap-0.5 text-on-tertiary-container">
+<span class="material-symbols-outlined text-xs">offline_pin</span> Sẵn sàng đọc ngoại tuyến
+              </span>
+</div>
+<!-- Preview Image Placeholder -->
+<div class="my-space-md rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-56 md:h-72 object-cover" data-alt="A clean architectural system diagram showing web scraping and static HTML content caching pipeline into local MySQL database storage and asset file store, minimalist vector technical blueprint style with deep navy and subtle teal accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzo4TDo8aqS_g_47BRJT22bxDI8wMy-AZAa3gngbl8fs842DOGh1X5bAb9VBDeE5WGYo-byn6iqTjgcq2pc_cU8uf-h6obTrdj9vJJ46wFj-DH7ZBIqRgsUXQ-oU22PKc03539sVkw1mqMy7xzL2-RaltIU8l2Zx-tBfS1_UnFBAkkCtIHZ025TpsgOZJQZ4RKloZpDQ4utKnn-85v14_bBuDrt4P095DBRgJ08TylVEhq7XuUjNTiVA"/>
+</div>
+<p class="font-reader-body text-reader-body text-on-surface leading-relaxed mt-space-md">
+              Khi xây dựng các thư viện lưu trữ ngoại tuyến độc lập, nguyên tắc cốt lõi là bóc tách toàn bộ tài nguyên động (JavaScript theo dõi, biểu mẫu bên ngoài, quảng cáo) và chỉ giữ lại cấu trúc ngữ nghĩa DOM thuần túy. Quá trình chuyển hóa các thẻ ảnh và stylesheet thành đường dẫn cục bộ giúp bài viết có thể hiển thị nguyên vẹn 10 năm sau mà không phụ thuộc vào tên miền gốc...
+            </p>
+<!-- Inline Reader Control Bar Mock -->
+<div class="mt-space-lg pt-space-md flex items-center justify-between bg-surface-container-low rounded-lg px-space-md py-space-sm">
+<div class="flex items-center gap-space-sm">
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-xs font-medium">Serif</button>
+<button class="px-2 py-1 rounded text-secondary font-label-sm text-label-sm font-medium">Sans</button>
+<span class="text-outline-variant font-label-sm text-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-secondary">Cỡ chữ: 18px</span>
+</div>
+<div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base">download_for_offline</span>
+<span>Đã nén ZIP (4.2 MB)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 3 CORE FEATURES SECTION -->
+<section class="max-w-[1440px] mx-auto px-margin py-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl">
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest">Giá trị cốt lõi</span>
+<h2 class="font-display-lg text-display-lg text-primary font-bold mt-space-xs">
+          Được thiết kế cho người nghiên cứu sâu
+        </h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mt-space-sm md:mt-0">
+        Không chỉ đánh dấu trang (bookmark). WebArchive lưu trữ nguyên vẹn văn bản và tệp hình ảnh vào hệ sinh thái của bạn.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Feature 1 -->
+<div class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary mb-space-lg group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">folder_special</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Tổ chức khoa học</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mt-space-xs">
+            Thư viện ngăn nắp
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+            Phân loại bài viết theo chủ đề chuyên sâu, gán nhãn đa tầng linh hoạt và đồng bộ mục lục tra cứu giúp việc truy xuất tài liệu nghiên cứu diễn ra tức thì.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low rounded-lg p-space-md">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Thư mục ví dụ</span>
+<span class="text-primary font-semibold">12 bộ sưu tập</span>
+</div>
+<div class="flex flex-wrap gap-1 mt-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm">Khoa học máy tính</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm">Lịch sử kinh tế</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm">Kiến trúc hệ thống</span>
+</div>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container mb-space-lg group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">save_as</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Miễn nhiễm biến động</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mt-space-xs">
+            Lưu nội dung an toàn
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+            Bóc tách mã HTML tĩnh chuẩn xác, tự động tải và liên kết hình ảnh cục bộ độc lập. An tâm tuyệt đối ngay cả khi trang gốc đổi cấu trúc, xuất hiện tường thu phí hoặc biến mất hoàn toàn (Lỗi 404).
+          </p>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low rounded-lg p-space-md">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Bảo vệ đường dẫn hỏng (Link rot)</span>
+<span class="text-on-tertiary-container font-semibold">100% Tĩnh</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-space-xs overflow-hidden">
+<div class="bg-on-tertiary-container h-full w-[100%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="group flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary mb-space-lg group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">menu_book</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Không gian thiền định</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mt-space-xs">
+            Đọc lại độc lập
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+            Trình đọc tối giản (Distraction-free Reader) lược bỏ toàn bộ cửa sổ pop-up phiền toái, font chữ Merriweather chuẩn mực xuất bản báo chí quốc tế, hoạt động trơn tru ngay cả khi không có kết nối mạng Internet.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low rounded-lg p-space-md">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Trải nghiệm người đọc</span>
+<span class="text-primary font-semibold">Tỉ lệ 65-75 ký tự/dòng</span>
+</div>
+<p class="font-reader-body text-xs text-on-surface-variant italic mt-space-xs truncate">
+            "Sự tĩnh lặng quý giá trong thời đại đầy rẫy thông tin phân mảnh."
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS: 3 STEPS -->
+<section class="max-w-[1440px] mx-auto px-margin py-space-xl">
+<div class="bg-surface-container-low rounded-xl p-space-lg md:p-space-xl shadow-sm">
+<div class="max-w-2xl mx-auto text-center mb-space-xl">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest">Quy trình đơn giản</span>
+<h2 class="font-display-lg text-display-lg text-primary font-bold mt-space-xs">
+          Cách thức hoạt động trong 3 bước
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+          Không yêu cầu cài đặt tiện ích mở rộng phức tạp. Mọi quy trình xử lý nội dung được thực hiện chuẩn chỉ trên máy chủ cá nhân.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg relative">
+<!-- Step 1 -->
+<div class="flex flex-col bg-surface-container-lowest p-space-lg rounded-xl shadow-xs">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-display-lg text-display-lg font-bold text-secondary-fixed-dim">01</span>
+<span class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-lg">link</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">
+            Dán liên kết bài viết
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+            Hệ thống tự động phân tích và kiểm tra tính hợp lệ của URL, xác nhận cấu trúc nguồn từ trang báo điện tử hoặc tài liệu công nghệ.
+          </p>
+<div class="mt-space-md p-space-sm rounded bg-surface-container-low font-label-sm text-label-sm text-secondary truncate">
+            https://themorningnews.org/article/deep-work
+          </div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col bg-surface-container-lowest p-space-lg rounded-xl shadow-xs">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-display-lg text-display-lg font-bold text-secondary-fixed-dim">02</span>
+<span class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-lg">data_object</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">
+            Bóc tách HTML &amp; lưu hình ảnh
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+            Máy chủ tách lọc tiêu đề, nội dung chính, loại bỏ kịch bản theo dõi và tải toàn bộ ảnh đính kèm lưu về bộ nhớ độc lập.
+          </p>
+<div class="mt-space-md flex items-center gap-2 p-space-sm rounded bg-surface-container-low font-label-sm text-label-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-xs">tune</span>
+<span>Chuẩn hóa DOM • Nén tài nguyên tĩnh</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col bg-surface-container-lowest p-space-lg rounded-xl shadow-xs">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-display-lg text-display-lg font-bold text-secondary-fixed-dim">03</span>
+<span class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-lg">chrome_reader_mode</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">
+            Đọc lại trọn vẹn ngoại tuyến
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+            Mở bài viết trong không gian đọc ấm áp, chỉnh cỡ chữ tùy ý và thưởng thức văn bản thuần khiết mà không cần kết nối mạng.
+          </p>
+<div class="mt-space-md flex items-center gap-2 p-space-sm rounded bg-surface-container-low font-label-sm text-label-sm text-primary">
+<span class="material-symbols-outlined text-xs">auto_stories</span>
+<span>Không xao nhãng • Tự do biên mục</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- EDITORIAL IMMERSIVE SHOWCASE (VISUAL RICHNESS) -->
+<section class="max-w-[1440px] mx-auto px-margin py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-5 flex flex-col">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest">Không gian tập trung</span>
+<h2 class="font-display-lg text-display-lg text-primary font-bold mt-space-xs">
+          Đọc theo cách mà mắt bạn xứng đáng được trải nghiệm
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-md leading-relaxed">
+          Được thiết kế riêng cho những ai dành hàng giờ đắm mình trong các bài luận dài. Tùy chỉnh màu giấy ngà dịu mắt, phông chữ báo in kinh điển và theo dõi tiến độ đọc theo thời gian thực.
+        </p>
+<!-- Technical checklist -->
+<div class="mt-space-lg space-y-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5">check_box</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">Tự chủ dữ liệu hoàn toàn</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Toàn bộ dữ liệu nằm trên máy chủ nội bộ hoặc cơ sở dữ liệu riêng của bạn.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5">check_box</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">Xuất dữ liệu mở định dạng tiêu chuẩn</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dễ dàng tải về bản nén ZIP chứa file HTML đơn lập và thư mục ảnh đính kèm.</p>
+</div>
+</div>
+</div>
+<div class="mt-space-xl">
+<a class="inline-flex items-center gap-space-xs text-primary font-headline-sm text-headline-sm font-semibold hover:text-secondary transition-colors" data-path="thu-vien-dang-mo" href="#">
+<span>Trải nghiệm không gian đọc mẫu</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="relative rounded-xl overflow-hidden shadow-xl bg-surface-container-lowest">
+<img class="w-full h-80 sm:h-96 md:h-[420px] object-cover" data-alt="A refined calm study room desk aesthetic, showing a high resolution tablet screen displaying clean Merriweather serif typography reading view, warm timber desk background, ceramic coffee mug, natural soft daylight, editorial minimalist workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHhRgRkNwJ2ZFXkT3BNKQ_j4bJ-5WOP-wdBrSSHoz0ctQ5hwa214XTUmYecYDu-M0iXZUIh5Jx4YJLMP6yUmM0_f_W37HHUFxLR8iY9h-KIKyUKmnYHCbnk0ormy5RUuSAljwKtuOUndCBrr3oB5lZLg3axb0lovlWveoK6ss7X3BrrHSIVy65pRbpeTbh_EuTAaqvvHG7TO0Y1W-BfVwpTsjlbdSR2revuIYvT1dMIQrRqTJ-3niLTQ"/>
+<div class="absolute bottom-4 left-4 right-4 p-space-md rounded-xl bg-surface-container-lowest/95 backdrop-blur shadow-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">auto_stories</span>
+<div>
+<div class="font-label-md text-label-md text-primary">Chế độ đọc báo chí: Giấy ngà tự nhiên</div>
+<div class="font-label-sm text-label-sm text-secondary">Tỷ lệ tương phản 12:1 • Không chói mắt</div>
+</div>
+</div>
+<span class="px-space-sm py-1 rounded bg-surface-container text-primary font-label-sm text-label-sm font-medium">Bản quyền mở</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BOTTOM CALL TO ACTION BANNER -->
+<section class="max-w-[1440px] mx-auto px-margin py-space-xl">
+<div class="relative rounded-xl bg-primary-container text-on-primary p-space-xl md:p-16 overflow-hidden shadow-xl">
+<!-- Decorative background lines -->
+<div class="absolute -right-16 -bottom-16 w-96 h-96 rounded-full bg-secondary-container/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl">
+<span class="font-label-md text-label-md text-primary-fixed uppercase tracking-wider">Khởi tạo kho tàng số</span>
+<h2 class="font-display-lg text-display-lg text-on-primary font-bold mt-space-xs">
+          Xây dựng thư viện tri thức trường tồn cùng thời gian.
+        </h2>
+<p class="font-body-lg text-body-lg text-surface-container-highest mt-space-md">
+          Bắt đầu lưu trữ những bài viết giá trị nhất của bạn ngay bây giờ. Hoàn toàn bảo mật, độc lập và luôn sẵn sàng mỗi khi bạn cần tra cứu.
+        </p>
+<div class="mt-space-xl flex flex-wrap items-center gap-space-md">
+<a class="inline-flex items-center justify-center gap-space-sm px-space-lg py-3 rounded-xl bg-on-primary text-primary font-headline-sm text-headline-sm shadow-md hover:bg-surface-container transition-all" data-path="luu-trang-web" href="#">
+<span>Bắt đầu lưu bài viết đầu tiên</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-space-sm px-space-lg py-3 rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm hover:bg-primary-container transition-colors" data-path="thu-vien-cua-toi" href="#">
+<span>Xem thư viện mẫu</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Technical Architecture Note -->
+<div class="mt-space-lg text-center">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">memory</span>
+<span>Hệ thống hỗ trợ lưu trữ cục bộ HTML &amp; hình ảnh an toàn • Tối ưu cho PHP &amp; MySQL</span>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-space-xl mt-space-xl"><div class="max-w-[1440px] mx-auto px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="WebArchive Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V4gsFNE3GDN44xfDb8qSFTRH_sZBeFk2lIBqG3efLThK82AJHf_D0JaQrxVCSBOjEX518xOU4biC1NZ9rogSdxXO8CJVoXfxv9QMEsiBjAd4Qzep5kmVtzWVpaI7sqDU2n13W99RTZz3cpDDQWvLIGMV5W0-rZRLEc80F2u-W-_7c610wCY2YKpbD2u95RD19T8d2ZTV9ychREnH1EO4LVWOR-0O7Hn31w_NgbXpz4t8W3-D1DBS4Yd8TI"/><span class="font-body-md text-body-md text-on-surface font-semibold">WebArchive</span><span class="font-body-sm text-body-sm text-on-surface-variant">— Nền tảng lưu trữ snapshot và đọc offline cá nhân</span></div><div class="font-label-sm text-label-sm text-on-surface-variant">© 2024 WebArchive Inc. Mọi bản quyền được bảo hộ.</div></div></footer></body></html>

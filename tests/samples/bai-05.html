@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 5: Dòng lệnh Linux cho người quản trị</title>
+<meta property="og:title" content="Bài 5: Dòng lệnh Linux cho người quản trị">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/bai-04.html">Bài trước</a> ·
+    <a href="/">Trang chủ</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 5: Dòng lệnh Linux cho người quản trị</h1>
+
+  <p>Làm việc trên máy chủ web gần như chắc chắn sẽ đi kèm dòng lệnh. Bài học
+  này đi qua những lệnh mà người quản trị hệ thống dùng hằng ngày: xem nội
+  dung tệp, tìm kiếm theo mẫu, theo dõi tiến trình, và kiểm tra tình trạng
+  dịch vụ.</p>
+
+  <p>Lệnh <code>ls</code> liệt kê nội dung thư mục, <code>cat</code> in ra một
+  tệp, và <code>grep</code> lọc các dòng khớp với một mẫu. Kết hợp chúng với
+  ký hiệu đường ống, ta dựng được một chuỗi xử lý nhỏ gọn mà rất mạnh. Tuy nhiên
+  cần nhớ rằng ký hiệu đường ống nối các chương trình, không phải nối các tệp
+  tạm, nên lệnh chạy song song theo dòng và với tệp rất lớn thì bộ nhớ đệm
+  có thể trở thành vấn đề.</p>
+
+  <h2>Quản lý tiến trình và dịch vụ</h2>
+
+  <p>Lệnh <code>ps</code> liệt kê tiến trình đang chạy, <code>kill</code> gửi
+  tín hiệu kết thúc, và <code>systemctl</code> điều khiển các dịch vụ của hệ
+  thống. Một tín hiệu dịch chuyển thường yêu cầu tiến trình dọn dẹp rồi mới
+  thoát, nên gửi tín hiệu đó trước, chờ thêm vài giây, rồi mới dùng tín hiệu
+  cưỡng bức. Với ứng dụng web, đây chính là cách dừng máy chủ thử nghiệm một
+  cách gọn gàng.</p>
+
+  <p>Để theo dõi tài nguyên, lệnh <code>top</code> hiển thị mức dùng bộ nhớ
+  và CPU theo thời gian thực, còn lệnh <code>free</code> cho biết tổng dung
+  lượng bộ nhớ. Khi một tiến trình PHP chờ đợi quá lâu mà không sinh ra phản
+  hồi, nguyên nhân thường là chờ I/O chứ không phải dùng hết CPU — đó là lý do
+  giới hạn thời gian chờ luôn cần thiết trong bất kỳ engine tải trang nào.</p>
+
+  <p>Một ví dụ quen thuộc trong công việc quản trị web là tình huống máy chủ
+  từ chối phân giải tên miền: lệnh tra cứu trả về lỗi thay vì địa chỉ, dù
+  dịch vụ phân giải tên miền DNS của máy vẫn chạy bình thường. Với dữ liệu
+  đã lưu trong cơ sở dữ liệu thì điều này không quan trọng, vì bản đọc được
+  không cần gọi ra ngoài nữa.</p>
+
+  <p>Mã bài mẫu: <code>mau05webarchive</code>. Cụm này nằm trong thân bài và sẽ
+  được dùng để tạo ra một trang có hai phiên bản trong phần kiểm thử.</p>
+
+  <ul>
+    <li>Dùng đường ống để lọc và xử lý dòng văn bản.</li>
+    <li>Gửi tín hiệu dịch chuyển trước khi dùng tín hiệu cưỡng bức.</li>
+    <li>Luôn đặt giới hạn thời gian chờ cho mọi tác vụ chờ mạng.</li>
+  </ul>
+</article>
+
+</body>
+</html>

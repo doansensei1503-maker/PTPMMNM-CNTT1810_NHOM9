@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "tertiary-fixed-dim": "#6fd8cb",
+        "on-error-container": "#93000a",
+        "background": "#f8f9ff",
+        "secondary-fixed": "#d1e4ff",
+        "on-secondary-fixed": "#001d36",
+        "on-background": "#0f1d2a",
+        "secondary": "#3f6186",
+        "on-secondary-container": "#3a5c81",
+        "surface": "#f8f9ff",
+        "on-surface": "#0f1d2a",
+        "inverse-on-surface": "#e9f1ff",
+        "on-primary": "#ffffff",
+        "on-primary-container": "#7f97b7",
+        "primary-fixed": "#d2e4ff",
+        "secondary-fixed-dim": "#a8c9f4",
+        "surface-container-highest": "#d6e4f7",
+        "primary-fixed-dim": "#b0c8ea",
+        "error": "#ba1a1a",
+        "on-tertiary-container": "#35a59a",
+        "on-primary-fixed": "#001d36",
+        "secondary-container": "#b3d4ff",
+        "outline-variant": "#c3c6ce",
+        "inverse-surface": "#253140",
+        "surface-container": "#e4efff",
+        "surface-tint": "#48607e",
+        "surface-container-low": "#eef4ff",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-fixed-variant": "#26496d",
+        "on-primary-fixed-variant": "#304865",
+        "surface-container-high": "#dce9fc",
+        "primary": "#001a32",
+        "outline": "#74777e",
+        "on-secondary": "#ffffff",
+        "inverse-primary": "#b0c8ea",
+        "surface-variant": "#d6e4f7",
+        "primary-container": "#152f4a",
+        "on-tertiary-fixed": "#00201d",
+        "on-tertiary-fixed-variant": "#00504a",
+        "error-container": "#ffdad6",
+        "tertiary": "#001d1a",
+        "on-error": "#ffffff",
+        "on-surface-variant": "#43474d",
+        "tertiary-container": "#00342f",
+        "tertiary-fixed": "#8cf4e7",
+        "surface-bright": "#f8f9ff",
+        "on-tertiary": "#ffffff",
+        "surface-dim": "#cedbee"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "space-sm": "0.5rem",
+        "space-lg": "1.5rem",
+        "space-xs": "0.25rem",
+        "margin-mobile": "1rem",
+        "gutter-mobile": "1rem",
+        "margin": "2rem",
+        "space-md": "1rem",
+        "gutter": "1.5rem",
+        "space-xl": "2.5rem"
+      },
+      "fontFamily": {
+        "label-md": ["Inter"],
+        "body-sm": ["Inter"],
+        "body-lg": ["Inter"],
+        "display-lg-mobile": ["Inter"],
+        "reader-body": ["Merriweather"],
+        "headline-md": ["Inter"],
+        "body-md": ["Inter"],
+        "reader-title": ["Merriweather"],
+        "headline-sm": ["Inter"],
+        "display-lg": ["Inter"],
+        "reader-title-mobile": ["Merriweather"],
+        "label-sm": ["Inter"],
+        "reader-body-mobile": ["Merriweather"]
+      },
+      "fontSize": {
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "display-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "reader-body": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+        "reader-title": ["34px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "reader-title-mobile": ["26px", {"lineHeight": "36px", "fontWeight": "700"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+        "reader-body-mobile": ["16px", {"lineHeight": "28px", "fontWeight": "400"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-1 bg-primary-container w-full"></div><div class="h-16 w-full px-margin flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="WebArchive Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V4gsFNE3GDN44xfDb8qSFTRH_sZBeFk2lIBqG3efLThK82AJHf_D0JaQrxVCSBOjEX518xOU4biC1NZ9rogSdxXO8CJVoXfxv9QMEsiBjAd4Qzep5kmVtzWVpaI7sqDU2n13W99RTZz3cpDDQWvLIGMV5W0-rZRLEc80F2u-W-_7c610wCY2YKpbD2u95RD19T8d2ZTV9ychREnH1EO4LVWOR-0O7Hn31w_NgbXpz4t8W3-D1DBS4Yd8TI"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight leading-none">WebArchive</span><span class="font-label-sm text-label-sm text-secondary font-medium mt-0.5">Thư viện Web cá nhân</span></div></div><nav class="hidden lg:flex items-center gap-space-xs ml-space-md" data-active-classes="bg-surface-container text-primary font-semibold rounded-lg"><a class="px-space-md py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors" data-path="trang-chu" href="#">Trang chủ</a><a class="px-space-md py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors" data-path="thu-vien-cua-toi" href="#">Thư viện của tôi</a><a class="px-space-md py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors" data-path="thu-vien-dang-mo" href="#">Thư viện đang mở</a><a class="px-space-md py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors" data-path="luu-trang-web" href="#">Lưu trang Web</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded-full"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-secondary font-medium">Chế độ offline sẵn sàng</span></div><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYTZuUEa9bPutUeri9TPAZ4pU1pW_G01SqHoQ62iZbJ8M9Lz4c7jKZf1OavhgJjgLTcsp7rjNjljEU3vU-yBJF-yJwYlk6GxP89RIq-VtusqF_dMW8FeAMdyiSugGjcIuMXUnI079l9D9e46K97LxW8PtxpTdoybrtdqDvuVD8INNStPp4IB0Y3eF01SUObBOQHa1WDdcw-sZjTQNFKu9n6qp-k7Jis_2zlqMvQ5iIBAj-awOHqKsQUA"/><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Lê Minh Tuấn</span><span class="font-label-sm text-label-sm text-on-surface-variant">Quản trị viên</span></div></div><a class="font-body-sm text-body-sm text-secondary hover:text-error transition-colors ml-space-xs hidden sm:inline-block" data-path="dang-xuat" href="#">Đăng xuất</a></div></div></header><aside class="fixed left-0 top-[68px] bottom-0 w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-md px-space-md"><div class="px-space-sm py-space-xs"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Bộ sưu tập lưu trữ</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container text-primary font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="thu-vien-cua-toi" href="#"><span class="material-symbols-outlined text-[20px]">folder</span>Tất cả lưu trữ</a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="thu-vien-dang-mo" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span>CNTT &amp; Lập Trình</a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="danh-dau-yeu-thich" href="#"><span class="material-symbols-outlined text-[20px]">star</span>Đã đánh dấu</a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="chua-doc" href="#"><span class="material-symbols-outlined text-[20px]">schedule</span>Chưa đọc</a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="thung-rac" href="#"><span class="material-symbols-outlined text-[20px]">delete</span>Thùng rác</a></nav><div class="pt-space-md px-space-sm"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Công cụ bảo tồn</span></div><div class="flex flex-col gap-space-xs px-space-xs"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="luu-trang-web" href="#"><span class="material-symbols-outlined text-[20px]">add_link</span>Lưu snapshot URL</a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-md text-body-md" data-path="quan-ly-dung-luong" href="#"><span class="material-symbols-outlined text-[20px]">hard_drive</span>Kho lưu trữ 2.4 GB</a></div></div><div class="px-space-md"><div class="bg-surface-container-low p-space-sm rounded-xl flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[20px]">verified</span><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface font-medium">Bản quyền cá nhân</span><span class="font-label-sm text-label-sm text-on-surface-variant">Sẵn sàng đồng bộ</span></div></div></div></aside><div class="pl-64"><main class="relative pt-[68px] min-h-screen bg-surface w-full px-margin"><div class="flex flex-col w-full pb-space-xl">
+<!-- Subtle decorative ambient backing -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-24 -right-16 w-96 h-96 rounded-full bg-secondary-container/30 blur-3xl pointer-events-none"></div>
+<div class="absolute top-48 left-1/3 w-80 h-80 rounded-full bg-tertiary-fixed/20 blur-3xl pointer-events-none"></div>
+<!-- A. BREADCRUMB & CONTEXT META -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-md mb-space-md">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1 font-medium" href="#">
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_back</span>
+          Thư viện của tôi
+        </a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">CNTT &amp; Lập Trình</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-secondary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+          Thư viện mở • 24 bài viết
+        </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock_open</span>
+          Nội bộ nhóm
+        </span>
+</div>
+</div>
+<!-- B. PAGE HEADER & PRIMARY ACTIONS -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md mb-space-lg">
+<div class="max-w-3xl">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Bộ sưu tập chuyên đề</span>
+<span class="text-outline-variant font-light">•</span>
+<span class="font-label-sm text-label-sm text-outline">ID: LIB-DEV-2026</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight font-bold mb-space-xs">
+          CNTT &amp; Lập Trình
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Tổng hợp bài viết về lập trình, thuật toán, cơ sở dữ liệu và công nghệ phần mềm. Bảo tồn snapshot ngoại tuyến độc lập với máy chủ gốc.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="inline-flex items-center gap-1.5 px-space-md py-space-sm rounded-lg bg-surface-container-highest text-on-secondary-fixed-variant hover:bg-surface-container transition-colors font-label-md text-label-md font-medium" type="button">
+<span class="material-symbols-outlined text-[18px]">group</span>
+          Quản lý thành viên (3)
+        </button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-space-sm rounded-lg bg-surface-container-highest text-on-secondary-fixed-variant hover:bg-surface-container transition-colors font-label-md text-label-md font-medium" type="button">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+          Quản lý nhãn (6)
+        </button>
+<a class="inline-flex items-center gap-2 px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all font-label-md text-label-md font-semibold shadow-sm hover:shadow-md" href="#quick-capture">
+<span class="material-symbols-outlined text-[18px]">add_link</span>
+          Lưu trang Web mới
+        </a>
+</div>
+</div>
+<!-- C. COMPACT LIBRARY STORED STATISTICS (DERIVED FROM STORED CONTENT) -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-sm mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-medium">Bài lưu trữ</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">menu_book</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">24</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">snapshot</span>
+</div>
+<div class="mt-2 text-label-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> 100% nguyên vẹn
+        </div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-medium">Ảnh cục bộ</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">photo_library</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">168</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">tập tin</span>
+</div>
+<div class="mt-2 text-label-sm text-on-surface-variant">
+          Dung lượng ~84.2 MB
+        </div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-medium">Nhãn nội dung</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">local_offer</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">6</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">phân mục</span>
+</div>
+<div class="mt-2 text-label-sm text-secondary">
+          Phổ biến: #PHP #MySQL
+        </div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-medium">Thành viên</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">supervised_user_circle</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">tài khoản</span>
+</div>
+<div class="mt-2 text-label-sm text-on-surface-variant">
+          1 Admin • 1 Editor • 1 Viewer
+        </div>
+</div>
+<div class="col-span-2 sm:col-span-1 bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-medium">Toàn vẹn tệp</span>
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">verified</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-primary font-bold">0</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">Ảnh lỗi</span>
+</div>
+<div class="mt-2 text-label-sm text-on-tertiary-container flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Đồng bộ hoàn tất
+        </div>
+</div>
+</div>
+<!-- D. INTERACTIVE URL CAPTURE SECTION (SCREEN 06 STATE PREVIEWS INTEGRATED) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg" id="quick-capture">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">archive</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-semibold">Lưu bài viết vào thư viện này</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tự động trích xuất nội dung văn bản, chuyển đổi hình ảnh về lưu trữ máy chủ cục bộ.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-space-sm py-1 bg-surface-container rounded-lg font-label-sm text-label-sm text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">bolt</span> HTML snapshot engine
+          </span>
+</div>
+</div>
+<!-- Capture Input Row -->
+<form class="flex flex-col sm:flex-row gap-space-sm mb-space-xs" id="url-capture-form" onsubmit="event.preventDefault(); triggerSimulation();">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">link</span>
+<input class="w-full pl-11 pr-4 py-space-sm bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary/40 shadow-inner" id="url-input" placeholder="https://example.com/bai-viet-lap-trinh-web" required="" type="url" value="https://phptutorial.vn/kien-truc-php-mysql-webarchive"/>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-space-lg py-space-sm bg-primary-container text-on-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-primary transition-all whitespace-nowrap shadow-sm" id="btn-submit" type="submit">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Lưu trang Web</span>
+</button>
+</form>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pt-1 pb-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Dán liên kết bài viết thuộc website được phép lưu (HTML tĩnh công khai).
+        </span>
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:text-primary transition-colors text-left" onclick="document.getElementById('guidance-details').classList.toggle('hidden');" type="button">
+<span class="material-symbols-outlined text-[16px]">help_outline</span>
+          Các URL được phép lưu là gì?
+        </button>
+</div>
+<!-- Collapsible Guidance -->
+<div class="hidden mt-space-xs p-space-md bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="guidance-details">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">info</span>
+<div>
+<strong class="text-on-surface font-semibold">Quy chuẩn bóc tách snapshot độc lập:</strong>
+            Hệ thống hỗ trợ hoàn hảo các trang tin tức, blog kỹ thuật, bài nghiên cứu công nghệ không yêu cầu bức tường phí (paywall) hoặc xác thực 2 lớp. Trình bóc tách sẽ tải mã HTML gốc, bóc tách thẻ chứa nội dung chính và ánh xạ toàn bộ thẻ <code>&lt;img&gt;</code> sang định dạng cục bộ.
+          </div>
+</div>
+</div>
+<!-- State Simulation Banner (Success / Processing toggle demo) -->
+<div class="mt-space-md p-space-md bg-surface-container rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-space-sm" id="status-banner">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-tertiary-container shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Lưu thành công:</span>
+<span class="font-body-md text-body-md text-primary font-medium">“Tìm hiểu kiến trúc PHP &amp; MySQL trong lưu trữ Web”</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+              14 ảnh đã tải về máy chủ nội bộ • Dung lượng lưu trữ: 1.84 MB • Bản đọc offline đã sẵn sàng
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center">
+<a class="px-space-md py-1.5 bg-surface-container-lowest text-primary hover:bg-surface-container font-label-md text-label-md font-semibold rounded-lg shadow-sm transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">chrome_reader_mode</span>
+            Mở xem ngay
+          </a>
+</div>
+</div>
+</div>
+<!-- G. INTEGRATED QUICK TAG & MEMBER PILL BAR (SCREEN 09 & 10 CONTEXT) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md mb-space-lg">
+<!-- Member Roles Bar -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-center">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">badge</span>
+            Thành viên &amp; Phân quyền thư viện (3)
+          </span>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors font-medium" href="#">+ Mời thêm</a>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs pt-1">
+<div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold">LT</span>
+<span class="font-label-sm text-label-sm font-semibold">Lê Minh Tuấn</span>
+<span class="px-1.5 py-0.2 bg-surface-container-highest rounded text-[10px] text-secondary font-semibold">Chủ sở hữu</span>
+</div>
+<div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm font-bold">TN</span>
+<span class="font-label-sm text-label-sm font-semibold">Trần Hoàng Nam</span>
+<span class="px-1.5 py-0.2 bg-surface-container-highest rounded text-[10px] text-secondary font-semibold">Biên tập viên</span>
+</div>
+<div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-secondary flex items-center justify-center font-label-sm text-label-sm font-bold">NH</span>
+<span class="font-label-sm text-label-sm font-semibold">Nguyễn Thu Hà</span>
+<span class="px-1.5 py-0.2 bg-surface-container-highest rounded text-[10px] text-outline font-semibold">Người xem</span>
+</div>
+</div>
+</div>
+<!-- Quick Tag Chips Bar -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-center">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sell</span>
+            Nhãn phân loại (6)
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">Lọc nhanh</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<button class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold hover:bg-secondary-fixed transition-colors">
+            #PHP
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+            #MySQL
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+            #Web
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+            #Algorithms
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+            #Security
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+            #HTML
+          </button>
+</div>
+</div>
+</div>
+<!-- E. TABS FOR ORGANIZATION & SEARCH BAR -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-md">
+<!-- Tabs Navigation -->
+<div class="flex items-center gap-2 bg-surface-container-lowest p-1 rounded-xl shadow-sm w-fit">
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container text-primary font-label-md text-label-md font-semibold transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">article</span>
+          Tất cả bài viết (24)
+        </button>
+<button class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">label</span>
+          Nhãn phân loại (6)
+        </button>
+<button class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+          Thành viên &amp; Phân quyền (3)
+        </button>
+</div>
+<!-- Search & View Filter inside Library -->
+<div class="flex items-center gap-space-xs">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-secondary shadow-sm" placeholder="Lọc trong thư viện này..." type="text"/>
+</div>
+<button class="p-2 bg-surface-container-lowest text-secondary hover:text-primary rounded-lg shadow-sm" title="Sắp xếp">
+<span class="material-symbols-outlined text-[20px]">sort</span>
+</button>
+</div>
+</div>
+<!-- F. SAVED ARTICLE CARDS GRID (SCREEN 07) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- CARD 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div>
+<!-- Thumbnail Visual Representation -->
+<div class="relative h-44 bg-surface-container-high overflow-hidden p-space-md flex flex-col justify-between">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-500" data-alt="Editorial close up photograph of modern coding workspace with clean typography, code snippets on screen, subtle blue cyan tone, soft daylight, archival library feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcCxF0-PyqwgI-Jq2izaV00a2xMYqiqcsWNJQTlBzcxq8guZ9kAXLJvMnc_mT4JkHiTt6ZATGg-EjF7pOzeTbNYbuNTfByddRTR0LeaA4yU9parjrzrgvwvFjEocwC2cFljem4QJFdxC_4YQCy3KXc3cDbu1ly9pziJ_8E6z3JuZYFDN5rTvozfUQv3YLqtFOmu8GxkZ3pToBbQNRs2XE2DFJudAUiHnvNzyPI44GxEPVbDYQWE4iieA"/>
+<div class="relative z-10 flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm font-semibold text-primary">
+                HTML DOM Snapshot
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur text-on-tertiary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                18 ảnh cục bộ
+              </span>
+</div>
+<!-- Stylized Code/Structure snippet in preview -->
+<div class="relative z-10 bg-surface-container-lowest/90 backdrop-blur rounded p-2 text-xs font-mono text-on-surface-variant overflow-hidden">
+<div class="text-[11px] text-primary font-bold">&lt;article class="markdown-table"&gt;</div>
+<div class="text-[10px] text-outline pl-2">&lt;table data-preserved="true"&gt;...&lt;/table&gt;</div>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="p-space-md flex flex-col">
+<!-- Origin & Date Metadata -->
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-2">
+<span class="flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">public</span>
+                phptutorial.vn
+              </span>
+<span>Lưu ngày: 21/10/2026</span>
+</div>
+<!-- Title -->
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug group-hover:text-secondary transition-colors mb-space-xs line-clamp-2">
+              Bài viết chứa nhiều thẻ HTML phức tạp và định dạng bảng
+            </h3>
+<!-- Excerpt -->
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+              Hướng dẫn xử lý các bảng dữ liệu đa cột, bảo toàn định dạng CSS gốc và tự động bóc tách các style inline không cần thiết khi trích xuất tài liệu.
+            </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium">#HTML</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium">#PHP</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium">#WebStandards</span>
+</div>
+<!-- Offline Status Pill -->
+<div class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-md bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-semibold mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">offline_pin</span>
+              Bản đọc ngoại tuyến sẵn sàng (Đã lưu ảnh cục bộ)
+            </div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="px-space-md pb-space-md pt-0 flex items-center justify-between gap-space-xs">
+<a class="flex-grow inline-flex items-center justify-center gap-2 py-2 px-space-md bg-primary-container text-on-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-primary transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">chrome_reader_mode</span>
+            Đọc bản đã lưu
+          </a>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Chi tiết bản lưu">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-error transition-colors" title="Thao tác khác">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- CARD 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div>
+<!-- Thumbnail Visual Representation -->
+<div class="relative h-44 bg-surface-container-high overflow-hidden p-space-md flex flex-col justify-between">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-500" data-alt="Server database conceptual graphic, technical architectural storage illustration, deep navy blue and muted teal palette, clean lines and indexing trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsP3DMxxnKMrlBc1Q1Hi_SO1DKD7WgjhcWG9GXvmCOM473wz0CFAcrss93x9wVVTaxcnsTJqyjtH-33lfcU5xy0dzULo-jVL202ZI9vGuBAU8uxYOEksJ_ck-YvvDhbAWXQXJKaRovxyfQZ98l3zFrex9nZejLZz6hswLbXLa_t0DJPBjhUiZNmnph43z0cLcj0ZVfP5TApGbGXysmZZT8D9BFiw7TEsf8qhHW25vxjuRhlZvDN0ZM9w"/>
+<div class="relative z-10 flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm font-semibold text-primary">
+                MySQL Query Engine
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">storage</span>
+                450 KB Text
+              </span>
+</div>
+<!-- Stylized schema graphic preview -->
+<div class="relative z-10 bg-surface-container-lowest/90 backdrop-blur rounded p-2 text-xs font-mono text-on-surface-variant overflow-hidden">
+<div class="text-[11px] text-primary font-bold">INDEX (library_id, created_at)</div>
+<div class="text-[10px] text-outline pl-2">EXPLAIN SELECT * FROM snapshots...</div>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="p-space-md flex flex-col">
+<!-- Origin & Date Metadata -->
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-2">
+<span class="flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">public</span>
+                techblog.dev
+              </span>
+<span>Lưu ngày: 19/10/2026</span>
+</div>
+<!-- Title -->
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug group-hover:text-secondary transition-colors mb-space-xs line-clamp-2">
+              Tối ưu hóa truy vấn MySQL cho hệ thống lưu trữ tài liệu phân trang
+            </h3>
+<!-- Excerpt -->
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+              Kỹ thuật đánh chỉ mục B-Tree đa cột, xử lý tải 100,000 bản ghi bài viết và phương pháp chia bảng để giảm độ trễ truy xuất snapshot dưới 15ms.
+            </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium">#MySQL</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium">#Database</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium">#Indexing</span>
+</div>
+<!-- Offline Status Pill -->
+<div class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-md bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-semibold mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">offline_pin</span>
+              Bản đọc ngoại tuyến sẵn sàng
+            </div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="px-space-md pb-space-md pt-0 flex items-center justify-between gap-space-xs">
+<a class="flex-grow inline-flex items-center justify-center gap-2 py-2 px-space-md bg-primary-container text-on-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-primary transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">chrome_reader_mode</span>
+            Đọc bản đã lưu
+          </a>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Chi tiết bản lưu">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-error transition-colors" title="Thao tác khác">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- CARD 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div>
+<!-- Thumbnail Visual Representation -->
+<div class="relative h-44 bg-surface-container-high overflow-hidden p-space-md flex flex-col justify-between">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-500" data-alt="Technical blueprint of a web crawler pipeline, digital file ingestion diagram, minimalist monochrome blue aesthetic, subtle nodes connecting storage buckets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpIqvygrVDZIJ4QKY2XnfwI3fz-SyjfGsjigJF7hzkwodHrqN2PL_JexhJ59LlNULrll_l_kjWwb4pUqoYNmvHJekPm2q9Mic976TIv0T0ZGKXubfuOCjCAKN8ddsQLb4HNYPRnwb3dG_f3qsaLvm9mj7FmAR1xI1gSyUZS_pyS9IQQmHD5bwjpQrK_SFKv-1U5svxHyZXqyr1FHaQ2yNIf6TyuUTV5zPPENh5LVB1wEh0P6HNdTrl0Q"/>
+<div class="relative z-10 flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm font-semibold text-primary">
+                Security Sandbox
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur text-on-tertiary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                9 ảnh • Isolated
+              </span>
+</div>
+<!-- Stylized crawler flow preview -->
+<div class="relative z-10 bg-surface-container-lowest/90 backdrop-blur rounded p-2 text-xs font-mono text-on-surface-variant overflow-hidden">
+<div class="text-[11px] text-primary font-bold">CRAWLER :: DOMPurify + Regex</div>
+<div class="text-[10px] text-outline pl-2">assets/images/2026/10/img_921.webp</div>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="p-space-md flex flex-col">
+<!-- Origin & Date Metadata -->
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mb-2">
+<span class="flex items-center gap-1 text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">public</span>
+                devzone.org
+              </span>
+<span>Lưu ngày: 15/10/2026</span>
+</div>
+<!-- Title -->
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold leading-snug group-hover:text-secondary transition-colors mb-space-xs line-clamp-2">
+              Kiến trúc bóc tách nội dung HTML và lưu trữ hình ảnh độc lập
+            </h3>
+<!-- Excerpt -->
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+              Xây dựng module parser độc lập loại bỏ rác mã JavaScript, cô lập style sheets và ánh xạ lại đường dẫn hình ảnh cục bộ an toàn trên PHP 8.3.
+            </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium">#Crawler</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium">#Architecture</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium">#Security</span>
+</div>
+<!-- Offline Status Pill -->
+<div class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-md bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-semibold mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">offline_pin</span>
+              Bản đọc ngoại tuyến sẵn sàng
+            </div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="px-space-md pb-space-md pt-0 flex items-center justify-between gap-space-xs">
+<a class="flex-grow inline-flex items-center justify-center gap-2 py-2 px-space-md bg-primary-container text-on-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-primary transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">chrome_reader_mode</span>
+            Đọc bản đã lưu
+          </a>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Chi tiết bản lưu">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-error transition-colors" title="Thao tác khác">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination & Archive Footer Info -->
+<div class="mt-space-xl pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span>Hiển thị <strong>3</strong> trong tổng số <strong>24</strong> bài lưu trữ</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium shadow-sm">Trang trước</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold">1</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium shadow-sm">2</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium shadow-sm">3</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium shadow-sm">Trang sau</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function triggerSimulation() {
+    const btn = document.getElementById('btn-submit');
+    const input = document.getElementById('url-input');
+    const banner = document.getElementById('status-banner');
+    
+    if(!input.value) return;
+
+    btn.disabled = true;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span> <span>Đang bóc tách...</span>`;
+    
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">download_for_offline</span> <span>Lưu trang Web</span>`;
+      banner.classList.remove('hidden');
+      banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 1200);
+  }
+</script></main></div></body></html>

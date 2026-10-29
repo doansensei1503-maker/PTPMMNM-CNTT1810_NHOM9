@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 1: Nền tảng PHP cho lập trình viên</title>
+<meta property="og:title" content="Bài 1: Nền tảng PHP cho lập trình viên">
+<meta name="description" content="Bài học số 1 trong bộ mẫu của WebArchive: nền tảng ngôn ngữ PHP.">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/">Trang chủ</a> ·
+    <a href="/bai-02.html">Bài tiếp theo</a> ·
+    <a href="/lien-he">Liên hệ</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 1: Nền tảng PHP cho lập trình viên</h1>
+
+  <p>PHP vẫn là một trong những ngôn ngữ phía máy chủ được dùng phổ biến nhất
+  trong các hệ thống quản lý nội dung. Bài học này gom những khái niệm nền tảng
+  nhất: cách biến tồn tại trong phạm vi, cách viết hàm, và vì sao việc tách phần
+  dữ liệu ra khỏi phần hiển thị lại là một nguyên tắc quan trọng.</p>
+
+  <p>Ở phần đầu, người đọc cần phân biệt rõ hai loại biến. Biến cục bộ chỉ tồn
+  tại trong lời gọi hàm và biến mất ngay khi hàm kết thúc, còn biến toàn cục được
+  khai báo bằng từ khoá <code>global</code> hoặc đi qua tham số. Khi một hàm cần
+  dữ liệu từ bên ngoài, cách sạch nhất vẫn là truyền tham số tường minh, bởi vì
+  cách đó khiến luồng dữ liệu của chương trình luôn nhìn thấy được.</p>
+
+  <figure>
+    <img src="anh-01.png" alt="Ảnh minh hoạ cấu trúc một tệp PHP cơ bản" title="Cấu trúc tệp PHP cơ bản">
+    <figcaption>Hình minh hoạ được tải về máy chủ nội bộ khi bài viết được lưu lại.</figcaption>
+  </figure>
+
+  <h2>Vòng lặp và điều kiện rẽ nhánh</h2>
+
+  <p>Ba cấu trúc điều khiển xuống đường cơ bản của PHP là <code>if</code>,
+  <code>foreach</code> và <code>switch</code>. Khi duyệt một mảng kết quả, nên
+  dùng <code>foreach</code> thay vì truy cập chỉ số thủ công, bởi vì cách đó vừa
+  ngắn hơn vừa không sợ lỗi ra ngoài phạm vi mảng. Với các giá trị cố định,
+  <code>match</code> trả về giá trị trực tiếp và là lựa chọn hiệu quả hơn
+  <code>switch</code> trong PHP 8.</p>
+
+  <p>Điều kiện cần được viết rõ ràng, tránh so sánh chuỗi rỗng. Khi so sánh kết
+  quả trả về từ một lệnh truy vấn, luôn kiểm tra xem có dòng dữ liệu nào trả về
+  hay không trước khi dùng, vì mảng rỗng trong PHP vẫn là một giá trị "đúng" khi
+  được ép kiểu.</p>
+
+  <h2>Chuỗi và mảng</h2>
+
+  <p>Chuỗi trong PHP là một mảng byte có chỉ số bắt đầu từ không, nên truy cập
+  ký tự ngoài biên sẽ sinh cảnh báo. Hàm <code>strlen</code> đo độ dài theo byte
+  chứ không phải theo ký tự Unicode, vì vậy với tiếng Việt nên dùng
+  <code>mb_strlen</code> để đếm ký tự thật. Mảng liên kết được dùng rất nhiều
+  để gom dữ liệu theo nhãn, và cú pháp ngắn gọn <code>$m['khoa']</code> giúp mã
+  dễ đọc hơn so với mảng chỉ số.</p>
+
+  <p>Câu hỏi then chốt của bài học này là: dữ liệu nên được tải ở đâu? Câu trả
+  lời là càng gần với nơi sử dụng càng tốt, nhưng phần ghi vào cơ sở dữ liệu phải
+  nằm ở một chỗ duy nhất để tránh hai nơi cùng ghi và làm lệch dữ liệu. Người đọc
+  cần ghi nhớ: khi chia hệ thống thành nhiều lớp, mỗi lớp chỉ được biết đúng
+  lớp ngay bên dưới nó, và mối ràng buộc giữa hai lớp phải được viết ra rõ ràng
+  bằng một hợp đồng gọi là <code>hopdongAPI</code> — đó cũng chính là cụm mà bài
+  thứ bảy trong bộ mẫu này cùng nhắc tới.</p>
+
+  <p>Mã bài mẫu: <code>mau01webarchive</code>. Cụm này chỉ nằm trong thân bài,
+  không xuất hiện ở tiêu đề, nên dùng nó để tìm bằng từ khoá sẽ chỉ ra đúng
+  bài này.</p>
+
+  <ul>
+    <li>Dùng tham số tường minh thay vì biến toàn cục.</li>
+    <li>Dùng <code>mb_strlen</code> khi đếm ký tự tiếng Việt.</li>
+    <li>Tách phần dữ liệu, phần nghiệp vụ và phần hiển thị thành ba lớp riêng.</li>
+  </ul>
+
+  <blockquote>
+    <p>Một đoạn mã chỉ nên viết một lần và chạy ở nhiều nơi — đó là nguyên tắc
+    đơn giản nhưng hay bị bỏ qua nhất.</p>
+  </blockquote>
+</article>
+
+<footer>
+  <p>Chân trang của trang mẫu — không thuộc phần nội dung bài viết.</p>
+</footer>
+
+</body>
+</html>

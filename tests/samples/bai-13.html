@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 13: Bố cục dùng thẻ main và div</title>
+<meta property="og:title" content="Bài 13: Bố cục dùng thẻ main và div">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/bai-12.html">Bài trước</a> ·
+    <a href="/">Trang chủ</a>
+  </nav>
+</header>
+
+<main class="noi-dung-chinh">
+  <div class="the">
+    <h1>Bài 13: Bố cục dùng thẻ main và div</h1>
+
+    <p>Không phải trang nào cũng dùng thẻ bài viết. Rất nhiều trang thực tế dựng
+    vùng nội dung chính bằng thẻ vùng chính hoặc bằng một nhóm thẻ khối, và bài
+    học này kiểm tra xem công cụ bóc tách có nhận ra vùng nội dung chính trong
+    trường hợp đó hay không.</p>
+
+    <p>Cơ chế chọn vùng nội dung của công cụ hoạt động theo thứ tự ưu tiên. Trước
+    hết nó tìm thẻ bài viết. Nếu không có, nó tìm thẻ vùng chính. Nếu vẫn không
+    có, nó quét các khối và khối nào có mật độ chữ cao nhất sẽ được chọn. Cuối
+    cùng, nếu tất cả đều không có, nó dùng toàn bộ thân của trang làm nội
+    dung.</p>
+
+    <div class="khoi">
+      <h2>Vì sao cần đo mật độ chữ</h2>
+
+      <p>Một trang thường có nhiều khối: thanh điều hướng, thanh bên, biểu mẫu
+      đăng ký, bảng đánh giá và phần bài viết. Đo mật độ chữ giúp phân biệt phần
+      nào là nội dung chính và phần nào là rác. Cách tính là cộng độ dài văn bản
+      nằm trong các thẻ đoạn văn, rồi trừ đi phần văn bản nằm trong các liên
+      kết, vì liên kết thường là menu điều hướng chứ không phải nội dung.</p>
+
+      <p>Vì sao cần làm sạch phần rác trước khi đo? Vì nếu chưa gỡ, các thẻ
+      điều hướng, đầu trang, chân trang và khung quảng cáo sẽ làm nhiễu phép tính,
+      và công cụ có thể chọn nhầm một khối rác làm nội dung chính. Bước gỡ này
+      phải chạy trước bước tìm vùng nội dung, không phải sau.</p>
+    </div>
+
+    <div class="khoi">
+      <h2>Kiểm tra độ dài tối thiểu</h2>
+
+      <p>Sau khi có vùng nội dung, công cụ đo độ dài văn bản thuần. Nếu quá ngắn,
+      trang bị coi là không có nội dung đọc được và không được lưu thành bài viết
+      hợp lệ. Ngưỡng này loại bỏ những trang chỉ có thông báo ngắn, trang lỗi, và
+      những trang mà bố cục khiến công cụ bóc tách nhầm phần rác thành nội dung.
+      Mỗi trường hợp bị loại đều sinh một mã trạng thái riêng, giúp thống kê quản
+      trị đếm được và giúp người dùng hiểu vì sao trang đó không được lưu.</p>
+    </div>
+
+    <p>Mã bài mẫu: <code>mau13webarchive</code>. Cụm này nằm trong thân của vùng
+    nội dung chính được nhận diện bằng thẻ vùng chính.</p>
+
+    <ul>
+      <li>Ưu tiên thẻ bài viết, sau đó thẻ vùng chính, sau đó khối có mật độ chữ cao nhất.</li>
+      <li>Gỡ phần rác trước khi đo mật độ chữ.</li>
+      <li>Trang quá ngắn không được lưu thành bài viết hợp lệ.</li>
+    </ul>
+  </div>
+</main>
+
+</body>
+</html>

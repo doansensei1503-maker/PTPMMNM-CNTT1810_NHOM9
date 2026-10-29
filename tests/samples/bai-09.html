@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 9: Mạng máy tính và hệ thống phân giải tên miền DNS</title>
+<meta property="og:title" content="Bài 9: Mạng máy tính và hệ thống phân giải tên miền DNS">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/bai-08.html">Bài trước</a> ·
+    <a href="/">Trang chủ</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 9: Mạng máy tính và hệ thống phân giải tên miền</h1>
+
+  <p>Mạng máy tính là tập hợp các thiết bị kết nối với nhau để trao đổi dữ liệu.
+  Để mọi thứ hoạt động, cần có ba tầng: tầng vật lý truyền tín hiệu, tầng giao
+  thức định nghĩa cách đóng gói dữ liệu, và tầng ứng dụng định nghĩa ý nghĩa
+  của nội dung. Bài học dài này đi sâu vào tầng ứng dụng, vào hệ thống phân giải
+  tên miền, cũng như vào cách một công cụ lưu trữ phải đối xử với chuyển hướng
+  khi tải trang từ xa.</p>
+
+  <h2>Mô hình phân tầng và gói tin</h2>
+
+  <p>Khi một trình duyệt yêu cầu một trang web, yêu cầu đó được đóng gói nhiều
+  lần, mỗi tầng thêm phần đầu riêng của mình. Tầng truyền tải chia dữ liệu
+  thành các đơn vị nhỏ gọi là khung, và mỗi khung mang địa chỉ vật lý của người
+  gửi và người nhận. Tầng mạng định tuyến các khung qua nhiều trung chuyển cho
+  đến khi tới đích, và tầng truyền tảo lại khung với địa chỉ vật lý mới ở mỗi
+  chặng. Chính vì vậy, tầng ứng dụng không cần biết đường đi thực tế của dữ
+  liệu — nó chỉ cần biết địa chỉ đích cuối cùng.</p>
+
+  <p>Địa chỉ IP xác định một giao diện mạng, còn tên miền là một nhãn dễ đọc
+  gắn với địa chỉ đó. Việc ánh xạ giữa tên miền và địa chỉ do hệ thống phân
+  giải tên miền đảm nhiệm, và đây chính là lớp trung gian mà mọi công cụ tải
+  trang đều phải đi qua — viết tắt bằng ba chữ cái <code>DNS</code>. Khi một
+  tên miền không còn tồn tại, hoặc khi bản ghi phân giải bị xoá, mọi yêu cầu tới
+  tên miền đó sẽ thất bại dù máy chủ nội dung vẫn còn nguyên.</p>
+
+  <h2>Phân giải tên miền và vòng đời bản ghi</h2>
+
+  <p>Bản ghi phân giải tên miền có một thời gian sống, thường tính bằng phút
+  hoặc giờ. Khi bản ghi hết hạn, máy chủ phân giải phải hỏi lại máy chủ gốc
+  của tên miền. Đây chính là lý do việc thay đổi địa chỉ máy chủ của một trang
+  không có hiệu lực tức thì trên toàn bộ Internet. Đối với công cụ lưu trữ,
+  việc một bản sao cũ vẫn đọc được là điều cần thiết, bởi nội dung đã lưu
+  phải sống lâu hơn nhiều so với vòng đời của bản ghi phân giải.</p>
+
+  <p>Trong hệ thống phân giải phân cấp, máy chủ cục bộ của nhà cung cấp dịch
+  vụ hỏi máy chủ gốc theo thứ tự từ gốc của cây xuống, cho tới khi gặp bản ghi
+  có thẩm quyền trả lời. Mỗi lần truy vấn đều có thể dùng bộ nhớ đệm để
+  giảm tải, và việc xoá bộ nhớ đệm buộc phải gửi thông điệp riêng tới máy chủ
+  cục bộ.</p>
+
+  <h2>Chuyển hướng và an toàn khi tải trang</h2>
+
+  <p>Một máy chủ có thể trả về lệnh chuyển hướng tới một máy chủ khác, và đích
+  chuyển hướng có thể nằm ngoài phạm vi mà người tải trang dự định. Đây là lý
+  do công cụ lưu trữ phải kiểm tra danh sách tên miền được duyệt ở mọi đích
+  chuyển hướng, chứ không chỉ ở địa chỉ ban đầu. Nếu chỉ kiểm tra một lần ở đầu
+  vào, một chuyển hướng đơn giản là đủ để đưa công cụ tải tới một máy chủ chưa
+  được duyệt.</p>
+
+  <p>Còn một chi tiết nữa cần lưu ý: bản ghi chuyển hướng có thể dẫn tới một
+  địa chỉ dùng giao thức khác. Vì vậy công cụ cần giới hạn chuyển hướng chỉ đi
+  trong phạm vi giao thức an toàn, và cần giới hạn số bước chuyển hướng tối đa
+  để tránh vòng lặp. Mỗi đích chuyển hướng lại phải vượt qua bước kiểm tra
+  danh sách tên miền được duyệt, với đúng quy tắc so khớp tên miền và tên
+  miền phụ đã dùng ở bước đầu.</p>
+
+  <p>Mã bài mẫu: <code>mau09webarchive</code>. Cụm này nằm trong thân của bài
+  dài này và sẽ được dùng làm từ khoá thử tìm kiếm.</p>
+
+  <ul>
+    <li>Mỗi tầng trong mô hình phân tầng chỉ cần biết tầng ngay bên dưới nó.</li>
+    <li>Kiểm tra danh sách tên miền được duyệt ở mọi đích chuyển hướng.</li>
+    <li>Giới hạn số bước chuyển hướng và chỉ cho phép giao thức an toàn.</li>
+  </ul>
+</article>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 6: Git và quản lý phiên bản mã nguồn</title>
+<meta property="og:title" content="Bài 6: Git và quản lý phiên bản mã nguồn">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/bai-05.html">Bài trước</a> ·
+    <a href="/">Trang chủ</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 6: Git và quản lý phiên bản mã nguồn</h1>
+
+  <p>Git lưu lịch sử phát triển của dự án dưới dạng chuỗi lần chụp. Mỗi lần
+  chụp ghi lại trạng thái của tệp, người tạo ra nó, thời điểm, và một thông điệp
+  ngắn gợi lại thay đổi. Nhờ vậy có thể xem lại mã nguồn của bất kỳ thời điểm
+  nào, và quay lại một phiên bản cũ khi phát hiện lỗi.</p>
+
+  <p>Ba vùng làm việc chính của Git là thư mục làm việc, vùng chỉ mục, và kho
+  lịch sử. Lệnh <code>add</code> đưa nội dung vào vùng chỉ mục,
+  <code>commit</code> ghi vùng chỉ mục thành một lần chụp mới, và
+  <code>push</code> gửi lần chụp đó lên máy chủ từ xa. Ba lệnh này tách bạch
+  việc chuẩn bị, việc ghi nhận và việc chia sẻ, giúp người dùng kiểm soát
+  được chính xác điều gì được chia sẻ.</p>
+
+  <h2>Phân nhánh và hợp nhất</h2>
+
+  <p>Nhánh cho phép nhiều người làm việc song song mà không cần sao chép toàn bộ
+  thư mục. Khi một nhánh hoàn thành, nó được hợp nhất về nhánh chính. Nếu có xung
+  đột, Git đánh dấu từng chỗ thay đổi và để người lập trình tự quyết định giữ
+  bên nào — Git không tự ý chọn, và đó là một điều tốt.</p>
+
+  <p>Trong dự án này, mỗi giai đoạn phát triển được gắn với một lần chụp rõ
+  ràng, và phiên bản phát hành được đánh dấu bằng một thẻ có chú thích. Thẻ là
+  một con trỏ tới một lần chụp cụ thể, kèm thông điệp giải thích vì sao phiên
+  bản đó đáng được đánh dấu.</p>
+
+  <p>Mã bài mẫu: <code>mau06webarchive</code>. Cụm này nằm trong thân bài và là
+  một trong những từ khoá dùng để tìm kiếm theo nội dung đã lưu.</p>
+
+  <ul>
+    <li>Viết thông điệp lần chụp mô tả <i>ý định</i>, không mô tả thao tác.</li>
+    <li>Dùng nhánh cho mỗi nhóm tính năng và hợp nhất khi đã kiểm thử.</li>
+    <li>Đánh dấu thẻ có chú thích cho mỗi phiên bản phát hành.</li>
+  </ul>
+</article>
+
+</body>
+</html>

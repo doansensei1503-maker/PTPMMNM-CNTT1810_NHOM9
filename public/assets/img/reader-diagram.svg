@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="So do kien truc luu tru noi dung Web tinh">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#152F4A"/>
+      <stop offset="1" stop-color="#24476B"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6FD8CB"/>
+    </marker>
+  </defs>
+
+  <rect width="640" height="360" fill="url(#bg)"/>
+
+  <!-- Duong ket noi GOC DIEU (chi ngang / dung), moi buoc mot mui ten -->
+  <g fill="none" stroke="#6FD8CB" stroke-width="2" opacity=".9" marker-end="url(#arrow)">
+    <path d="M164 180 H196"/>
+    <path d="M324 180 H356"/>
+    <path d="M484 180 H516"/>
+  </g>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" text-anchor="middle">
+    <!-- Buoc 1: nguon Web -->
+    <rect x="24" y="140" width="140" height="80" rx="10" fill="#F5F7F9"/>
+    <text x="94" y="172" font-size="15" font-weight="600" fill="#152F4A">Trang Web</text>
+    <text x="94" y="193" font-size="11" fill="#66768A">nguon duoc duyet</text>
+
+    <!-- Buoc 2: HTML tinh -->
+    <rect x="200" y="140" width="120" height="80" rx="10" fill="#EBF6F4"/>
+    <text x="260" y="172" font-size="14" font-weight="600" fill="#00342F">HTML tinh</text>
+    <text x="260" y="193" font-size="11" fill="#00504A">da lam sach</text>
+
+    <!-- Buoc 3: CSDL + anh cua bo -->
+    <rect x="360" y="140" width="120" height="80" rx="10" fill="#D2E4FF"/>
+    <text x="420" y="168" font-size="13" font-weight="600" fill="#001D36">MySQL</text>
+    <text x="420" y="185" font-size="11" fill="#304865">+ anh cua bo</text>
+    <text x="420" y="202" font-size="10" fill="#304865">snapshot</text>
+
+    <!-- Buoc 4: doc ngoai tuyen -->
+    <rect x="520" y="140" width="96" height="80" rx="10" fill="#FAF8F4"/>
+    <text x="568" y="172" font-size="13" font-weight="600" fill="#152F4A">Doc lai</text>
+    <text x="568" y="193" font-size="11" fill="#66768A">ngoai tuyen</text>
+
+    <!-- Chu thich duoi -->
+    <text x="320" y="272" font-size="12" fill="#B0C8EA">Moi buoc deu kiem tra lai danh sach ten mien duoc duyet</text>
+    <text x="320" y="294" font-size="12" fill="#B0C8EA">Snapshot khong chua script, iframe hay tai nguyen ngoai</text>
+  </g>
+</svg>

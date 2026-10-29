@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài viết kiểm thử về lưu trang Web — WebArchive Fixture</title>
+<meta property="og:title" content="Bài viết kiểm thử về lưu trang Web">
+<meta name="description" content="Trang thử nghiệm nội bộ cho engine tải trang P-CAPTURE.">
+<style>
+  .sidebar { color: #888; }
+  body { font-family: sans-serif; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/">Trang chủ</a> · <a href="/gioi-thieu">Giới thiệu</a> · <a href="/lien-he">Liên hệ</a>
+  </nav>
+</header>
+
+<article>
+  <h1>Bài viết kiểm thử về lưu trang Web</h1>
+
+  <p>Bài viết này là một trang HTML thử nghiệm phục vụ kiểm thử engine tải trang
+  của dự án WebArchive. Nội dung nằm trong thẻ <code>article</code> để engine bóc tách
+  đúng vùng nội dung chính, tách khỏi phần điều hướng và chân trang.</p>
+
+  <p>Trong bài có một từ khoá chỉ nằm trong thân bài, không xuất hiện ở tiêu đề hay
+  thẻ meta: <strong>khoa_tu_ban_than_webarchive</strong>. Việc kiểm thử sẽ dựa vào
+  từ khoá này để xác nhận nội dung đã được lưu đúng vào cơ sở dữ liệu cũng như đọc
+  lại được khi máy chủ nguồn đã dừng.</p>
+
+  <p>Cơ chế lưu trang hoạt động theo nguyên tắc mọi đích tải về đều phải thuộc danh
+  sách tên miền được duyệt, kể cả sau khi chuyển hướng. Vì vậy khi trang nguồn không
+  còn hoạt động, người đọc vẫn xem được toàn bộ nội dung đã lưu cùng ảnh đã tải về
+  máy chủ nội bộ.</p>
+
+  <figure>
+    <img src="pic.png" alt="Ảnh minh hoạ trong bài kiểm thử" title="Ảnh kiểm thử">
+    <figcaption>Hình minh hoạ được tải về máy chủ nội bộ và nối lại bằng đường dẫn cục bộ.</figcaption>
+  </figure>
+
+  <h2>Vì sao cần kiểm thử tự động</h2>
+
+  <p>Quy trình kiểm thử cần phân biệt rõ từng nguyên nhân lỗi: trang trả về 404,
+  máy chủ không phản hồi, tên miền chưa được duyệt, hay trang không có phần nội dung
+  chính. Mỗi nguyên nhân phải sinh một mã trạng thái riêng trong cơ sở dữ liệu và một
+  thông báo tiếng Việt riêng cho người dùng.</p>
+
+  <blockquote>
+    <p>Trang lỗi không bao giờ được lưu thành một bài viết hợp lệ.</p>
+  </blockquote>
+
+  <ul>
+    <li>Kiểm tra allowlist trước khi gọi mạng.</li>
+    <li>Kiểm tra lại allowlist ở mỗi lần chuyển hướng.</li>
+    <li>Làm sạch HTML theo danh sách thẻ và thuộc tính cho phép.</li>
+  </ul>
+
+  <p>Đoạn này cố tình dài thêm để chắc chắn tổng số ký tự văn bản của bài viết vượt
+  ngưỡng tối thiểu mà engine yêu cầu, nhờ đó bài hợp lệ và không bị từ chối vì lý do
+  nội dung quá ngắn.</p>
+
+  <!-- DẤU HIỆU PHIÊN BẢN 2 — dùng để chứng minh versioning tạo bản ghi mới
+       và giữ nguyên bản ghi cũ. Câu này chỉ xuất hiện ở phiên bản 2 trở đi. -->
+  <p>DAU HIEU PHIEN BAN HAI - noi dung cap nhat ngay 22/10/2026 de kiem chung
+  muc tang phien ban moi va giu nguyen phien ban cu.</p>
+
+  <!-- DẤU HIỆU PHIÊN BẢN 3 — dùng cho kiểm thử P-READ: thêm một câu đánh dấu
+       vào fixture, bấm "Lấy phiên bản mới" trong trình đọc, và xác nhận bản
+       snapshot mới chứa câu này trong khi các bản cũ thì không. -->
+  <p>DAU HIEU PHIEN BAN BA - cau danh duoc them rieng cho bai kiem thu P-READ
+  de chung minh refetch tao duoc phien ban moi.</p>
+
+  <p>Liên kết ngoài trong bài:
+    <a href="https://www.wikipedia.org/" title="Wikipedia">Wikipedia</a> —
+    liên kết này chỉ được giữ dạng văn bản, không tải nội dung về.</p>
+</article>
+
+<script>
+  alert("Đây là script độc hại giả lập — engine phải loại bỏ hoàn toàn.");
+</script>
+
+<aside class="sidebar">
+  <p>Nội dung này nằm trong thẻ aside và phải bị gỡ khỏi bản snapshot.</p>
+</aside>
+
+<footer>
+  <p>Chân trang của trang thử nghiệm — không được giữ trong nội dung bài viết.</p>
+</footer>
+
+<p onclick="alert('thuộc tính sự kiện onclick cũng phải bị gỡ')">
+  Đoạn này có thuộc tính onclick độc hại giả lập.
+</p>
+
+</body>
+</html>

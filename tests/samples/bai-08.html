@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 8: Bài viết nhiều hình minh hoạ</title>
+<meta property="og:title" content="Bài 8: Bài viết nhiều hình minh hoạ">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/bai-07.html">Bài trước</a> ·
+    <a href="/">Trang chủ</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 8: Bài viết nhiều hình minh hoạ</h1>
+
+  <p>Bài này cố tình chứa ba hình ảnh để kiểm chứng khả năng tải ảnh về máy chủ
+  nội bộ của công cụ lưu trữ. Khi bài viết được lưu lại, cả ba ảnh phải được tải
+  về máy chủ của chính ứng dụng, và đường dẫn trong nội dung phải được nối lại
+  trỏ về bản sao cục bộ — không còn bất kỳ đường dẫn ảnh nào trỏ ra ngoài.</p>
+
+  <p>Cơ chế này quan trọng vì nếu chỉ lưu mã HTML mà không tải ảnh về, thì bài
+  viết sẽ hỏng ngay khi trang gốc thay đổi đường dẫn ảnh hoặc máy chủ nguồn
+  ngừng hoạt động. Việc tải ảnh về đi cùng với kiểm tra danh sách tên miền
+  được duyệt cho từng ảnh, nên ảnh nằm trên máy chủ không được duyệt sẽ bị gỡ
+  khỏi bài thay vì được giữ lại và tải lúc đọc.</p>
+
+  <figure>
+    <img src="anh-03.png" alt="Hình minh hoạ thứ nhất" title="Hình minh hoạ thứ nhất">
+    <figcaption>Hình thứ nhất — sắc cam.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="anh-04.png" alt="Hình minh hoạ thứ hai" title="Hình minh hoạ thứ hai">
+    <figcaption>Hình thứ hai — sắc tím.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="anh-05.png" alt="Hình minh hoạ thứ ba" title="Hình minh hoạ thứ ba">
+    <figcaption>Hình thứ ba — sắc xanh lá.</figcaption>
+  </figure>
+
+  <h2>Kiểm tra chất lượng ảnh</h2>
+
+  <p>Ảnh phải được kiểm tra bằng nội dung thật chứ không tin vào phần mở rộng
+  tên tệp. Một tệp được đặt tên kết thúc bằng <code>.png</code> nhưng thật ra
+  chứa mã hoặc HTML sẽ bị từ chối. Với ảnh dạng vectơ, tệp trình duyệt chạy mã
+  theo nội dung nên không được phép nhúng vào bản lưu, và công cụ chỉ nhận các
+  định dạng ảnh raster đã kiểm tra chữ ký nhị phân.</p>
+
+  <p>Mã bài mẫu: <code>mau08webarchive</code>. Cụm này nằm trong thân bài và sẽ
+  được dùng để kiểm tra số ảnh được tải về.</p>
+
+  <ul>
+    <li>Xác minh định dạng ảnh bằng nội dung thật, không tin phần mở rộng.</li>
+    <li>Áp dụng danh sách tên miền được duyệt cho từng ảnh, không chỉ cho trang.</li>
+    <li>Giới hạn số ảnh mỗi bài và tổng dung lượng mỗi tài nguyên.</li>
+  </ul>
+</article>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 1: Nền tảng PHP cho lập trình viên</title>
+<meta property="og:title" content="Bài 1: Nền tảng PHP cho lập trình viên">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/">Trang chủ</a> ·
+    <a href="/bai-08.html">Bài tiếp theo</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 1: Nền tảng PHP cho lập trình viên</h1>
+
+  <p>Đây là bài thứ hai cùng mang tiêu đề với bài mở đầu, nhưng nội dung hoàn
+  toàn khác. Trong khi bài mở đầu nói về phạm vi biến, vòng lặp và cách tách lớp,
+  bài này đi sâu vào cấu trúc thư mục, quy ước đặt tên và mô hình phát hành mã
+  nguồn. Hai bài cùng tiêu đề nhằm mô phỏng tình huống thật: hai nguồn khác
+  nhau đăng cùng một tiêu đề, và công cụ tìm kiếm phải phân biệt được chúng nhờ
+  nội dung bên trong chứ không nhờ tiêu đề.</p>
+
+  <p>Một dự án PHP gọn gàng thường chia thư mục theo trách nhiệm: mã nguồn gốc ở
+  một nơi, mẫu giao diện ở một nơi, cấu hình ở một nơi riêng, và các tệp tĩnh
+  được phục vụ trực tiếp bởi máy chủ. Tệp cấu hình chứa thông tin nhạy cảm
+  luôn nằm ngoài kiểm soát phiên bản, còn mã nguồn thì luôn được kiểm soát.
+  Cách chia này giúp việc triển khai trở thành việc sao chép mã nguồn cộng với
+  một tệp cấu hình, thay vì phải rà lại toàn bộ mã tìm chỗ nhập mật khẩu.</p>
+
+  <h2>Quy ước đặt tên và cấu trúc lớp</h2>
+
+  <p>Về quy ước đặt tên, điều quan trọng nhất là tính nhất quán hơn là lựa chọn
+  của riêng bạn. Nhiều dự án PHP dùng tiền tố hậu tố để phân biệt lớp thực thể,
+  lớp giao diện và lớp trừu tượng. Dù chỉ có vài lớp, quy ước này giúp người
+  đọc khác tự nhận ra vai trò của từng tệp chỉ bằng cách nhìn tên.</p>
+
+  <p>Đối với mô hình phát hành, một số dự án chọn cách đánh số phiên bản theo
+  ngày, số khác dùng ba thành phần chính và hai thành phần phụ. Điểm quan trọng
+  là con số phiên bản phải tăng đơn điệu và mỗi lần phát hành phải có ghi chú
+  rõ ràng, để người khác biết điều gì đã thay đổi.</p>
+
+  <p>Mã bài mẫu: <code>mau07webarchive</code>. Cụm này nằm trong thân bài và là
+  mã riêng của bài này, khác với mã của bài mở đầu.</p>
+
+  <p>Ngoài ra, hai bài trùng tiêu đề này cùng nhắc đến cùng một khái niệm về
+  hợp đồng giữa các lớp, với mã <code>hopdongAPI</code> dùng chung. Từ khoá này
+  được chọn để chứng minh rằng tìm kiếm theo nội dung đã lưu trả về được cả
+  hai bài, dù tiêu đề của chúng trùng nhau.</p>
+
+  <ul>
+    <li>Đặt tệp cấu hình ngoài kiểm soát phiên bản.</li>
+    <li>Chọn một quy ước đặt tên và dùng nhất quán trong toàn dự án.</li>
+    <li>Ghi chú rõ ràng cho mỗi lần phát hành.</li>
+  </ul>
+</article>
+
+</body>
+</html>

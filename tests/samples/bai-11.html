@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 11: Làm sạch nội dung độc hại</title>
+<meta property="og:title" content="Bài 11: Làm sạch nội dung độc hại">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/bai-10.html">Bài trước</a> ·
+    <a href="/">Trang chủ</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 11: Làm sạch nội dung độc hại</h1>
+
+  <p>Bài này cố tình chứa ba loại nội dung nguy hiểm để kiểm tra khả năng làm
+  sạch của công cụ lưu trữ: một khối mã kịch bản, một thuộc tính sự kiện gắn
+  thẳng vào thẻ, và một khung nội dung nhúng. Khi bài viết này được lưu lại, cả
+  ba phải biến mất khỏi nội dung, trong khi phần văn bản đọc được vẫn phải còn
+  nguyên và tìm kiếm được.</p>
+
+  <p>Nguyên tắc của công cụ là <b>loại bỏ theo danh sách cho phép</b> chứ không
+  phải loại bỏ theo danh sách cấm. Mỗi thẻ và mỗi thuộc tính được giữ lại chỉ
+  khi nó nằm trong danh sách cho phép; tất cả những gì còn lại đều bị gỡ. Cách
+  này an toàn hơn vì nó không phụ thuộc vào việc đoán xem một thẻ lạ có nguy
+  hiểm hay không — mọi thứ lạ đều bị loại bỏ theo mặc định.</p>
+
+  <p>Còn một lớp kiểm tra nữa: sau khi làm sạch, nội dung được khẳng định lại
+  rằng không còn thẻ nguy hiểm, không còn địa chỉ thực thi, và không còn thuộc
+  tính sự kiện. Nếu khẳng định này thất bại, bài viết bị từ chối thay vì được
+  lưu, vì lưu một trang không an toàn còn tệ hơn là không lưu trang đó.</p>
+
+  <p>Đoạn văn này chứa thuộc tính sự kiện giả lập để kiểm tra.
+  <span onclick="alert('thuộc tính onclick độc hại giả lập')">Thuộc tính sự kiện
+  này phải bị gỡ khỏi bản lưu, nhưng đoạn văn bản này vẫn phải được giữ lại đầy
+  đủ để người đọc hiểu được ý nghĩa.</span></p>
+
+  <p>Liên kết có thuộc tính sự kiện:
+  <a href="https://vi.wikipedia.org/wiki/Hypertext_Markup_Language"
+     onclick="alert('liên kết độc hại giả lập')" onmouseover="alert('không được giữ')">
+  Wikipedia về ngôn ngữ đánh dấu siêu văn bản</a> — liên kết này vẫn được giữ
+  dạng văn bản và đường dẫn, nhưng không thuộc tính sự kiện nào được giữ lại.</p>
+
+  <p>Mã bài mẫu: <code>mau11webarchive</code>. Cụm này nằm trong thân bài và sau
+  khi làm sạch vẫn phải được tìm thấy bằng tìm kiếm.</p>
+
+  <ul>
+    <li>Giữ thẻ và thuộc tính theo danh sách cho phép, không theo danh sách cấm.</li>
+    <li>Gỡ cả phần tử lẫn nội dung con với thẻ nguy hiểm.</li>
+    <li>Khẳng định an toàn sau khi làm sạch và từ chối lưu nếu thất bại.</li>
+  </ul>
+</article>
+
+<script>
+  // Khối mã kịch bản giả lập — công cụ lưu trữ phải loại bỏ hoàn toàn.
+  window.alert("Khoa_tu_ban_than_webarchive_khong_duoc_the_giu_lai");
+</script>
+
+<iframe src="https://example.com/khung-nhung" title="Khung nội dung nhúng giả lập" width="400" height="200">
+  Nội dung thay thế của khung nội dung nhúng.
+</iframe>
+
+</body>
+</html>

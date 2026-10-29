@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài 3: HTML và CSS trong bố cục trang</title>
+<meta property="og:title" content="Bài 3: HTML và CSS trong bố cục trang">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/">Trang chủ</a> ·
+    <a href="/bai-04.html">Bài tiếp theo</a>
+  </nav>
+</header>
+
+<article class="bai-hoc">
+  <h1>Bài 3: HTML và CSS trong bố cục trang</h1>
+
+  <p>HTML mô tả cấu trúc của tài liệu, còn CSS mô tả cách trình bày. Hiện đại,
+  người ta ưu tiên bố cục dựa trên lưới, dùng các thẻ ngữ nghĩa để đánh dấu
+  vai trò của từng phần nội dung, rồi mới tinh chỉnh bằng CSS. Cách làm này giúp
+  trang hiển thị đúng trên nhiều kích thước màn hình và hỗ trợ trình đọc màn
+  hình hiểu được ý nghĩa từng đoạn.</p>
+
+  <h2>Chọn đúng thẻ ngữ nghĩa</h2>
+
+  <p>Một tiêu đề chính nên nằm trong thẻ tiêu đề cấp một, các tiêu đề phụ nằm
+  trong các thẻ cấp hai và cấp ba, và phần thân chính của bài nên nằm trong thẻ
+  bài viết. Trình đọc màn hình dựa vào cấu trúc tiêu đề để cho phép người dùng
+  nhảy tới từng mục, nên việc bỏ qua thứ tự cấp tiêu đề làm giảm đáng kể khả
+  năng sử dụng.</p>
+
+  <p>Về CSS, ba khái niệm quan trọng nhất là phân tầng, đơn vị tương đối và
+  truy vấn theo phương tiện. Đơn vị tương đối như phần trăm hay đơn vị độ dài
+  góc nhìn giúp bố cục co giãn theo khung chứa, còn truy vấn theo phương tiện
+  cho phép thay đổi bố cục khi màn hình hẹp lại.</p>
+
+  <h2>Bảng dữ liệu và khả năng tiếp cận</h2>
+
+  <p>Bảng trong HTML cần thẻ tiêu đề và ô dữ liệu, và khi dùng cho bố cục chứ
+  không phải dữ liệu thì nên tránh hoàn toàn. Với bảng dữ liệu thật, thuộc tính
+  phạm vi ô giúp trình đọc màn hình hiểu được ô nào thuộc hàng tiêu đề và ô nào
+  thuộc dữ liệu. Đây cũng chính là lý do công cụ lưu trữ của dự án giữ lại hai
+  thuộc tính phạm vi ô này khi làm sạch nội dung đã lưu.</p>
+
+  <p>Mã bài mẫu: <code>mau03webarchive</code>. Cụm khoá này chỉ xuất hiện trong
+  phần thân của bài, dùng để chứng minh rằng tìm kiếm dựa trên nội dung đã lưu
+  chứ không dựa trên tiêu đề.</p>
+
+  <ul>
+    <li>Dùng thẻ ngữ nghĩa trước, dùng lớp CSS sau.</li>
+    <li>Giữ một hệ thống khoảng cách thống nhất thay vì rải rác từng giá trị.</li>
+    <li>Kiểm tra bằng bàn phím và trình đọc màn hình trước khi hoàn thiện.</li>
+  </ul>
+</article>
+
+</body>
+</html>
